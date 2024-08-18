@@ -1,0 +1,76 @@
+/* src/component/Navbar/Navbar.css */
+
+.navbar {
+  background-color: transparent;
+  color: #fff;
+  height: 60px;
+  padding-top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.overlay-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 20px; /* Horizontal padding */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.logo-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  height: 40px; /* Adjust height to align with button if needed */
+}
+
+.nav-item {
+  margin: 0 10px; /* Add spacing between items */
+  font-family: sans-serif;
+}
+
+.nav-link {
+  color: #6a6262;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 14px;
+  display: block;
+}
+
+.nav-link:hover {
+  color: rgb(220, 101, 41);
+  text-decoration: underline;
+}
+
+.button-item {
+  display: flex;
+  align-items: center; /* Center the button vertically */
+  margin-left: 20px; /* Space between the last nav item and the button */
+}

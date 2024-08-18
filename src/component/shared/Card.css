@@ -1,0 +1,56 @@
+/* src/component/shared/Card.css */
+
+.card {
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 300px;
+  margin: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card-content {
+  padding: 0px;
+}
+
+.card-title {
+  font-size: smaller;
+  margin: 0 0 8px;
+  font-weight: 500;
+  color: rgb(220, 101, 41);
+}
+.card-name {
+  font-size: smaller;
+  margin: 4px 0;
+  font-weight: bold;
+  color: rgb(50, 50, 50);
+}
+
+.card-price {
+  font-size: small;
+  color: black;
+  margin: 4px 0;
+  font-weight: bold;
+}
+
+  
+   .card-description {
+    font-size: small;
+    color: black;
+    margin: 4px 0;
+    font-weight: bold;
+  } 
+  
+ /*  .card-extra {
+    margin-top: 16px;
+  } */
+  

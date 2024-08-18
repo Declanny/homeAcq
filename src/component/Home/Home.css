@@ -1,0 +1,110 @@
+/* src/component/Home/Home.css */
+
+img {
+  max-width: 100%; /* Ensure the image scales properly */
+  height: auto;
+  display: block; /* Prevents extra space beneath the image */
+  margin-top: -30px; /* Adjust margin-top as needed */
+  padding: 0; /* Remove any padding */
+  position: relative;
+  z-index: 1;
+}
+
+.Home-content {
+  position: relative;
+  z-index: 2;
+  margin-top: -550px; /* Adjust as needed */
+  padding: 120px; /* Add padding as needed */
+  color: white; /* Text color */
+}
+
+.Home-content h1 {
+  font-size: 70px; /* Example font size for the heading */
+}
+
+.Home-content p {
+  font-size: 14px; /* Example font size for the paragraph */
+  line-height: 1.5; /* Example line height */
+  margin-top: -40px; /* Example margin top for spacing */
+  color: whitesmoke;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Ensure children stack vertically */
+  align-items: center; /* Center children horizontally */
+  padding: 0 20px; /* Adjust horizontal padding inside the container */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
+  background-color: #f8f8f8; /* Example background color */
+  margin-top: 0px; /* Margin to separate from the previous content */
+}
+
+.Featurelistings {
+  width: 100%; /* Full width of its container */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  margin-top: 20px; /* Margin to separate from the top */
+}
+
+.Featurelistings h2 {
+  color: #333; /* Example color for the heading */
+  margin: 0; /* Remove default margin from h2 */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+  gap: 20px; /* Space between cards */
+  width: 100%; /* Full width of its container */
+  max-width: 1200px; /* Maximum width of the card container */
+  margin: 0 auto; /* Center horizontally within the parent container */
+  padding: 20px; /* Padding around the card container */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
+
+.card {
+ 
+  border-radius: 8px;
+  overflow: hidden;
+ 
+  max-width: 100%; /* Ensure card fits within its grid cell */
+ 
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1rem; /* Adjust font size for the card title */
+  margin: 0 0 8px;
+}
+
+.card-description {
+  font-size: 0.875rem; /* Adjust font size for the card description */
+  color: #666;
+  margin: 0;
+}
+
+.card-extra {
+  margin-top: 16px;
+}
+
+.card-btn {
+  margin-top: 10px; /* Space between card content and button */
+}
+.card-price {
+  font-size: small;
+}
