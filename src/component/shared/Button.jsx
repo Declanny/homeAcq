@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 
 const Button = ({
@@ -9,6 +8,7 @@ const Button = ({
   children,
   text,
   onClick,
+  width, // New prop for width
 }) => {
   const styles = {
     btn: {
@@ -22,9 +22,9 @@ const Button = ({
       fontFamily: 'Noto Sans JP',
       fontWeight: '500',
       lineHeight: '15px',
-  
       transition: 'background-color 0.3s ease',
       /* marginBottom: '10px', */
+      width: width || 'auto', // Apply width prop or default to 'auto'
     },
   };
 
@@ -43,6 +43,7 @@ Button.propTypes = {
   text: PropTypes.string,
   txColor: PropTypes.string,
   onClick: PropTypes.func,
+  width: PropTypes.string, // PropType for the width
 };
 
 export default Button;

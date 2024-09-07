@@ -76,7 +76,7 @@ const Buy = () => {
           <div className="search-row">
             <SearchBar
               placeholder="Coming Soon"
-              height="40px"
+              height="30px"
               width="250px"
               borderRadius="15px"
               backgroundColor="#CFCECE"
@@ -110,7 +110,7 @@ const Buy = () => {
             <SearchBar
               placeholder="Studio"
               height="40px"
-              width="300px"
+              width="200px"
               borderRadius="15px"
               backgroundColor="#CFCECE"
             >
@@ -119,7 +119,7 @@ const Buy = () => {
             <SearchBar
               placeholder="1"
               height="40px"
-              width="100px"
+              width="120px"
               borderRadius="15px"
               backgroundColor="#CFCECE"
             >
@@ -127,8 +127,8 @@ const Buy = () => {
             </SearchBar>
             <SearchBar
               placeholder="2"
-              height="40px"
-              Width="50px"
+              height="30px"
+              Width="150px"
               borderRadius="15px"
               backgroundColor="#CFCECE"
             >
@@ -396,13 +396,13 @@ const Buy = () => {
       
 
       <div className="main-content">
-        <h2 className='h2main'>Explore Properties for Sale</h2>
+        <h2>Explore Properties for Sale</h2>
         
-        <div className='HomeTypeMain'>
+        <div className='HomeType'>
     <SearchBar
       placeholder="Search Properties for Sale"
       height="40px"
-      width="300px"
+      width="999px"
       borderRadius="15px"
       backgroundColor=""
       border="1px solid orange"

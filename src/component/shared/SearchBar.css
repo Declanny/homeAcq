@@ -1,0 +1,40 @@
+.search-icon {
+    height: 26%; /* Adjust the height as needed */
+    margin-right: -7px; /* Space between icon and text */
+    margin-top: -5px;
+    vertical-align: middle; /* Align with text */
+    transform: translateY(2px); /* Bring the icon down slightly */
+    transition: fill 0.2s ease;
+  }
+  
+  /* Style the radio button */
+.custom-radio {
+  appearance: none; /* Remove default radio button appearance */
+  background-color: transparent !important;
+  border: 1px solid orange;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Style the checked state */
+.custom-radio:checked {
+  background-color: transparent;
+  border: 2px solid orange;
+}
+
+/* Add a dot inside the radio button when checked */
+.custom-radio:checked::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

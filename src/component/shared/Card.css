@@ -6,10 +6,11 @@
   max-width: 300px;
   margin: 16px;
   transition: box-shadow 0.3s ease;
+  box-shadow: none; /* Remove any default shadow */
 }
 
 .card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: none; /* Remove shadow on hover */
 }
 
 .card-image {
@@ -28,6 +29,7 @@
   font-weight: 500;
   color: rgb(220, 101, 41);
 }
+
 .card-name {
   font-size: smaller;
   margin: 4px 0;
@@ -42,15 +44,9 @@
   font-weight: bold;
 }
 
-  
-   .card-description {
-    font-size: small;
-    color: black;
-    margin: 4px 0;
-    font-weight: bold;
-  } 
-  
- /*  .card-extra {
-    margin-top: 16px;
-  } */
-  
+.card-description {
+  font-size: small;
+  color: black;
+  margin: 4px 0;
+  font-weight: bold;
+}

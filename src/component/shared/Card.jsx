@@ -1,16 +1,24 @@
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './Card.css'; // Import the CSS file for styling
+import './Card.css';
 
-const Card = ({ title, description, image, price, children, imageHeight, name }) => {
+const Card = ({ title, description, image, price, name, address, imageHeight = '185px' }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/detail', {
+      state: { title, description, image, price, name, address }
+    });
+  };
+
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick} style={{ cursor: 'pointer' }}>
       {image && <img src={image} alt={title} className="card-image" style={{ height: imageHeight }} />}
       <div className="card-content">
         {name && <p className="card-name">{name}</p>}
         {price && <p className="card-price">₦{price}</p>}
         {title && <h6 className="card-title">{title}</h6>}
-        {description && <p className="card-description">{description}</p>}
-        {children && <div className="card-extra">{children}</div>}
+        {/* Description is omitted on the home page */}
       </div>
     </div>
   );
@@ -21,19 +29,9 @@ Card.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.number,
-  children: PropTypes.node,
+  name: PropTypes.string,
+  address: PropTypes.string.isRequired, 
   imageHeight: PropTypes.string,
-  name: PropTypes.string, 
-};
-
-Card.defaultProps = {
-  title: '',
-  description: '',
-  image: '',
-  price: null,
-  children: null,
-  imageHeight: '185px',
-  name: '', 
 };
 
 export default Card;

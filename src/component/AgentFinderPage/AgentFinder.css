@@ -1,0 +1,22 @@
+/* src/pages/AgentFinder.css */
+
+.agent-finder-container {
+  padding: 20px;
+}
+
+.agent-finder-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.agent-finder-subtext {
+  font-size: 14px;
+  color: #f4a261;
+  margin-bottom: 20px;
+}
+
+.agents-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px; /* Add padding on top of the agents container */
+}

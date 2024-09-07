@@ -1,15 +1,18 @@
-// src/App.js
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './component/Navbar/Navbar';
+import Footer from './component/Footer/Footer';
 import Home from './component/Home/Home';
 import Buy from './component/BuyPage/Buy';
 import Sell from './component/SellPage/Sell';
 import Mortgage from './component/MortgagePage/Mortgage';
 import AgentFinder from './component/AgentFinderPage/AgentFinder';
 import Rent from './component/RentPage/Rent';
+import Reviews from './component/Reviews/Reviews';
 import PageNotFound from './component/PageNotFound/PageNotFound';
+import SignIn from './component/SignIn/SignIn';
+import SignUp from './component/SignUp/SignUp';
+import DetailPage from './component/shared/DetailPage';
 
 function App() {
   const links = [
@@ -39,7 +42,8 @@ function App() {
     <Router>
       <div className="App">
         <Navbar 
-          logoText="HomeAcq Realty Company" 
+          logoImage="./src/assets/Logo.png"
+          logoText="HomeAcq" 
           links={links} 
           buttonProps={buttonProps} 
         />
@@ -51,9 +55,14 @@ function App() {
             <Route path="/rent" element={<Rent />} />
             <Route path="/mortgage" element={<Mortgage />} />
             <Route path="/agentfinder" element={<AgentFinder />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/detail" element={<DetailPage />} />
             <Route path="/*" element={<PageNotFound />} />
           </Routes>
         </div>
+        <Footer /> {/* Footer will display on all pages */}
       </div>
     </Router>
   );

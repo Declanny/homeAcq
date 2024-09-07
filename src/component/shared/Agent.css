@@ -1,0 +1,40 @@
+/* src/components/Agent.css */
+
+.agent-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add some space between agents */
+    padding-top: 10px; /* Add padding on top of the agent container */
+  }
+  
+  .agent-image {
+    border-radius: 50%; /* Make the image circular */
+    height: 80px; /* Adjust the height */
+    width: 80px; /* Adjust the width */
+    object-fit: cover; /* Ensure the image covers the circle without distortion */
+    margin-right: 15px; /* Add space between image and text */
+  }
+  
+  .agent-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center-align items vertically */
+    flex-grow: 1; /* Allow this container to take up remaining space */
+  }
+  
+  .agent-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .agent-distance {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .agent-button-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 10px; /* Add margin to push the button up */
+  }
+  

@@ -1,0 +1,145 @@
+/* Styling for the detail page */
+.detail-page {
+    margin-top: 35px;
+    padding: 0 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Styling for the detail image */
+.detail-image {
+    width: 100%;
+    height: 500px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Styling for the features section */
+.features-section {
+    padding: 20px;
+}
+  
+.features-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+  
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+  
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 22%;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+  
+.feature-card img {
+    width: 18px;
+    height: 18px;
+    margin-top: 10px;
+}
+  
+.feature-card p {
+    font-size: 14px;
+    color: #d4a017;
+}
+  
+/* Styling for the price on the detail page */
+.detail-price {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+/* Styling for the address on the detail page */
+.detail-address {
+    font-size: 16px;
+    color: #777;
+    margin: 8px 0;
+}
+  
+/* Styling for the contact section */
+.contact-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+  
+.contact-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+  
+/* Styling for the contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+  
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px 15px;
+    margin-top: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: rgb(220, 101, 41);
+    box-shadow: 0px 0px 5px rgba(220, 101, 41, 0.3);
+    outline: none;
+}
+  
+.contact-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+  
+.contact-form button {
+    align-self: flex-start;
+    padding: 12px 20px;
+    background-color: rgb(220, 101, 41);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+  
+.contact-form button:hover {
+    background-color: #e57228;
+    transform: scale(1.02);
+}

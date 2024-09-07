@@ -1,0 +1,77 @@
+.buy-page {
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  /* background-color: #f4f4f4; */
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-row {
+  display: flex;
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.search-row > *:not(:last-child) {
+  margin-right: 10px; /* Space between search bars in a row */
+}
+.img {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  object-fit: cover; /* Keep aspect ratio */
+  margin-bottom: 10px; /* Space between images */
+}
+
+.empty-div {
+  height: 50px; /* Adjust as needed */
+  margin-bottom: 20px;
+  background-color: #e0e0e0;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.search-row1 {
+  display: flex;
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.search-row1 > *:not(:last-child) {
+  margin-right: 10px; /* Space between search bars in a row */
+}
+
+.search-row2 {
+  display: flex;
+  margin-bottom: 20px; /* Space between rows */
+  padding-right: 7cqi;
+}
+
+.search-row2 > *:not(:last-child) {
+  margin-right: 10px; /* Space between search bars in a row */
+}
+.PriceRange1{
+  margin-bottom: 20px; /* Space between rows */
+}
+.HomeType {
+  margin-bottom: 10px;
+}
+
+.HomeTypeMain {
+ 
+  
+  padding: 10px;
+  padding-left: 30px;
+
+}
+
+.h2main {
+  margin-left: 32px;
+  
+}

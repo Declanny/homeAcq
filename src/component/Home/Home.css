@@ -1,14 +1,26 @@
 /* src/component/Home/Home.css */
 
-img {
+/* Home.css */
+
+/* Base styling for the image */
+.home-image {
   max-width: 100%; /* Ensure the image scales properly */
-  height: auto;
-  display: block; /* Prevents extra space beneath the image */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;  /* Prevents extra space beneath the image */
   margin-top: -30px; /* Adjust margin-top as needed */
-  padding: 0; /* Remove any padding */
+  padding: 0;     /* Remove any padding */
   position: relative;
   z-index: 1;
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .home-image {
+    height: 500px; /* Increase the height for mobile devices */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+}
+
 
 .Home-content {
   position: relative;
@@ -107,4 +119,28 @@ img {
 }
 .card-price {
   font-size: small;
+}
+
+
+/* Testimonail section */
+.container {
+  padding: 20px;
+}
+
+.testimonials {
+  margin-top: 40px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* .testimonial-card {
+  /* Styling is already defined in TestimonialCard.css */
+
+
+.read-more-btn {
+  margin-top: 20px;
 }

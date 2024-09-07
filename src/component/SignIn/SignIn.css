@@ -1,0 +1,48 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .auth-container .logo {
+    text-align: center;
+  }
+  
+  .auth-container .logo-image {
+    width: 100px;
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .auth-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(220, 101, 41);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .auth-container .error {
+    color: red;
+    margin-top: 10px;
+  }
+  

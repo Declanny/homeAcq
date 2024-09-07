@@ -1,5 +1,4 @@
-/* src/component/Navbar/Navbar.css */
-
+/* Navbar Styles */
 .navbar {
   background-color: transparent;
   color: #fff;
@@ -41,14 +40,12 @@
 }
 
 .nav-menu {
+  
   list-style-type: none;
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  height: 40px; /* Adjust height to align with button if needed */
 }
 
 .nav-item {
@@ -73,4 +70,65 @@
   display: flex;
   align-items: center; /* Center the button vertically */
   margin-left: 20px; /* Space between the last nav item and the button */
+}
+
+.logo-image {
+  top: 10px;
+}
+
+/* Menu Icon Styles for Mobile */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Menu image icon styling */
+.menu-image {
+  width: 27px; /* Adjust the size of the menu icon */
+  height: 20px; /* Adjust the size of the menu icon */
+  margin-top: 4px;
+}
+
+/* Hide nav menu for mobile devices */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px; /* Decrease font size */
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 60px);
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999; /* Ensure it's above other content */
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    margin: 20px 0;
+  }
+
+  .button-item {
+    margin-top: 20px;
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon on mobile */
+  }
 }
