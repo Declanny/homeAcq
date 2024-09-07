@@ -42,7 +42,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar 
-          logoImage="./src/assets/Logo.png"
+           logoImage="/Images/Logo.png"
           logoText="HomeAcq" 
           links={links} 
           buttonProps={buttonProps} 

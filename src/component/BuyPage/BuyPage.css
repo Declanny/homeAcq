@@ -7,6 +7,12 @@
   padding: 20px;
   /* background-color: #f4f4f4; */
 }
+/* Media query to hide sidebar on mobile devices */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
 
 .search-container {
   margin-bottom: 20px;

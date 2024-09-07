@@ -1,10 +1,9 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from "prop-types";
 import { Link, useLocation } from 'react-router-dom';
-import Button from '../shared/Button'; // Adjust the path as per your file structure
-import './Navbar.css'; // Import the CSS file for styling
-import Menu from "../../assets/Menu.png";
-
+import Button from '../shared/Button'; 
+import './Navbar.css'; 
+import Menu from "../../assets/Menu.png"; // Assuming Menu.png is still in the assets folder
 
 const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
   const [menuOpen, setMenuOpen] = useState(false); // State for toggling menu
@@ -13,7 +12,7 @@ const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
 
   // Function to toggle menu visibility
   const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen); // Corrected the capitalization here
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -27,7 +26,7 @@ const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
         <div className="menu-icon" onClick={handleMenuToggle}>
           <img src={Menu} alt="Menu" className="menu-image" /> {/* Image for Menu Toggle */}
         </div>
-        <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}> {/* Corrected menuOpen usage here */}
+        <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
           {links.map((link, index) => (
             <li key={index} className="nav-item">
               <Link to={link.path} className="nav-link" onClick={handleMenuToggle}>{link.label}</Link>
