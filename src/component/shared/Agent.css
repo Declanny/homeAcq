@@ -34,7 +34,7 @@
   
   .agent-button-container {
     display: flex;
-    justify-content: flex-end; /* Align button to the right */
-    margin-top: 10px; /* Add margin to push the button up */
+    justify-content: 0; /* Align button to the right */
+    margin-top: -10px; /* Add margin to push the button up */
   }
   

@@ -1,4 +1,4 @@
-/* Styling for the detail page */
+/* General styling for the detail page */
 .detail-page {
     margin-top: 35px;
     padding: 0 200px;
@@ -18,20 +18,20 @@
 .features-section {
     padding: 20px;
 }
-  
+
 .features-section h3 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
 }
-  
+
 .features-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
-  
+
 .feature-card {
     display: flex;
     flex-direction: column;
@@ -44,18 +44,18 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     text-align: left;
 }
-  
+
 .feature-card img {
     width: 18px;
     height: 18px;
     margin-top: 10px;
 }
-  
+
 .feature-card p {
     font-size: 14px;
     color: #d4a017;
 }
-  
+
 /* Styling for the price on the detail page */
 .detail-price {
     font-size: 20px;
@@ -69,7 +69,7 @@
     color: #777;
     margin: 8px 0;
 }
-  
+
 /* Styling for the contact section */
 .contact-section {
     margin-top: 40px;
@@ -78,21 +78,21 @@
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
-  
+
 .contact-section h3 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
 }
-  
+
 /* Styling for the contact form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-  
+
 .contact-form label {
     display: flex;
     flex-direction: column;
@@ -100,7 +100,7 @@
     font-weight: 600;
     color: #555;
 }
-  
+
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
@@ -112,7 +112,7 @@
     background-color: #fff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-  
+
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
@@ -120,12 +120,12 @@
     box-shadow: 0px 0px 5px rgba(220, 101, 41, 0.3);
     outline: none;
 }
-  
+
 .contact-form textarea {
     resize: vertical;
     height: 100px;
 }
-  
+
 .contact-form button {
     align-self: flex-start;
     padding: 12px 20px;
@@ -138,8 +138,78 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-  
+
 .contact-form button:hover {
     background-color: #e57228;
     transform: scale(1.02);
+}
+
+/* Animation for mobile screens */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+
+/* For screens smaller than 1024px (Tablets and smaller) */
+@media (max-width: 1024px) {
+    .detail-page {
+        padding: 0 100px;
+    }
+    .features-container {
+        flex-wrap: wrap;
+    }
+    .feature-card {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+/* For screens smaller than 768px (Mobile devices) */
+@media (max-width: 768px) {
+    .detail-page {
+        padding: 0 50px;
+    }
+    .detail-image {
+        height: 300px;
+    }
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-card {
+        width: 90%;
+    }
+    .contact-section {
+        padding: 10px;
+    }
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+/* For screens smaller than 500px (Small mobile devices) */
+@media (max-width: 500px) {
+    .detail-page {
+        padding: 0 20px;
+        animation: slideInFromLeft 1s ease-out;
+    }
+    .features-section h3, 
+    .contact-section h3, 
+    .contact-form label {
+        font-size: 18px;
+    }
+    .detail-image {
+        height: 200px;
+    }
+    .features-container, .contact-section, .about-section {
+        animation: slideInFromLeft 1s ease-out;
+    }
 }
