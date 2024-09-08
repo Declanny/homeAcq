@@ -398,18 +398,26 @@ const Buy = () => {
       <div className="main-content">
         <h2 className='h2main'>Explore Properties for Sale</h2>
         
-        <div className='HomeTypeMain'>
-    <SearchBar
-      placeholder="Search Properties for Sale"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-    >
-      <img src={searchIcon} alt="Search" />
-    </SearchBar>
-  </div>
+        <div
+  className="HomeTypeMain"
+  style={{
+    width: window.innerWidth <= 500 ? '270px' : window.innerWidth <= 768 ? '250px' : '300px',
+    padding: '10px',
+    paddingLeft: '30px',
+    
+  }}
+>
+  <SearchBar
+    placeholder="Search Properties for Sale"
+    height="40px"
+    width="100%"  /* Use width as 100% to take the div's width */
+    borderRadius="15px"
+    backgroundColor=""
+    border="1px solid orange"
+  >
+    <img src={searchIcon} alt="Search" />
+  </SearchBar>
+</div>
 
       
         

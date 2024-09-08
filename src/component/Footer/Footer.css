@@ -1,57 +1,109 @@
-/* src/component/Footer/Footer.css */
-
 .footer {
-    
-    background-color: #f8f8f8;
-    color: #0B0A0A;
-    padding: 20px 0;
-    text-align: center;
-    height: 300px;
+  background-color: #f8f8f8;
+  color: #0B0A0A;
+  padding: 20px 0;
+  text-align: center;
+  height: 300px;
+}
+
+.footer-links {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  color: #e67009;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ddd;
+  text-decoration: underline #e67009;
+}
+
+.footer-logo {
+  color: #7a7676;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  margin: 0 10px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  opacity: 0.7;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .footer {
+      height: auto; /* Adjust the height for smaller devices */
+      padding: 15px 0;
   }
-  
+
   .footer-links {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+      margin-top: 50px;
   }
-  
+
   .footer-link {
-    color: #e67009;
-    margin: 0 15px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+      font-size: 14px; /* Reduce text size on smaller screens */
+      margin: 0 10px; /* Reduce margin between links */
   }
-  
-  .footer-link:hover {
-    color: #ddd;
-    text-decoration: underline #e67009;
-  }
-  
+
   .footer-logo {
-    color: #7a7676;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
+      font-size: 16px; /* Slightly smaller logo text */
+      margin-bottom: 15px;
   }
-  
+
   .footer-social {
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
+      margin-top: 30px;
   }
-  
-  .social-link {
-    margin: 0 10px;
-  }
-  
+
   .social-icon {
-    width: 24px;
-    height: 24px;
-    transition: opacity 0.3s ease;
+      width: 20px; /* Smaller social icons */
+      height: 20px;
   }
-  
-  .social-link:hover .social-icon {
-    opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+  .footer {
+      padding: 10px 0;
   }
-  
+
+  .footer-link {
+      font-size: 12px; /* Further reduce text size for very small screens */
+      margin: 0 8px;
+  }
+
+  .footer-logo {
+      font-size: 14px;
+      margin-bottom: 10px;
+  }
+
+  .footer-social {
+      margin-top: 20px;
+  }
+
+  .social-icon {
+      width: 18px; /* Further reduce the size of the icons */
+      height: 18px;
+  }
+}
