@@ -1,177 +1,152 @@
 /* Main container for About section */
 .about-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 20px;
     background-color: #f4f4f4;
-    overflow: hidden;
-    background-image: url('../../assets/AboutImg.png'); /* Set the background image */
-    background-size: cover;
-    background-position: center;
-    height: 600px; /* Make it full height to act as a hero section */
-    
-  }
-  
-  /* Styling for About text */
-  .about-text {
-    flex: 1;
+    background-image: none;
+    height: 600px;
+    position: relative;
+    margin-top: 20px; /* Add margin to avoid overlap with the navbar */
+}
+
+/* Background image */
+/* Background image */
+.about-background {
+    width: 100%;
+    height: 100%; /* Set height to cover the container */
+    object-fit: cover; /* Ensure the image fills the container without stretching */
+    position: absolute; /* Position the image behind the text */
+    margin-top: -20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+
+/* Styling for About text */
+.about-text {
+    text-align: center;
     padding: 20px;
     font-size: 1.5rem;
-    animation: fadeIn 1.5s ease;
-    background: rgba(255, 255, 255, 0.6); /* Add a semi-transparent background for readability */
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
     border-radius: 10px;
-    z-index: 2; /* Ensure text appears above the background */
-  }
-  
-  .about-text h2 {
+    max-width: 800px;
+    position: relative;
+    z-index: 1; /* Ensure it appears above the background image */
+    margin-top: -100px; /* Move text up to center within image */
+}
+
+.about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-  }
-  
-  .about-text p {
+}
+
+.about-text p {
     line-height: 1.6;
     color: rgba(16, 10, 0, 0.586);
-  }
-  
-  /* Styling for Image */
-  .about-image img {
-    height: 500px;
-    width: auto;
-    z-index: 1; /* Ensure the image appears behind the text */
-    display: none; /* Hide image, as background image is used instead */
-  }
-  
-  /* Responsive styling for screens smaller than 750px */
-  @media (max-width: 750px) {
-    .about-container {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-image: url('../../assets/AboutImg.png'); /* Set the background image */
-      background-size: cover;
-      background-position: center;
-      padding: 60px 20px; /* Adjust padding for hero section */
-      /* margin-top: -60px; */
-      height: auto; /* Auto height to accommodate the content */
-      width: auto;
-    }
-   
-  
-    .about-text {
-      background: rgba(255, 255, 255, 0.6); /* Add a semi-transparent background for readability */
-      padding: 40px;
-      font-size: 1.2rem;
-      border-radius: 10px;
-    }
-  
-    .about-text h2 {
-      font-size: 2rem;
-    }
-  
-    .about-text p {
-      font-size: 1rem;
-    }
-  
-    .about-image {
-      display: none; /* Hide the image as it will be used as a background */
-    }
-  }
-  
-  /* Keyframe animation for fade-in effect */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(90px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .team-container {
-    width: 100%;
+}
+
+/* Styling for the team section */
+.team-container {
     padding: 20px;
     text-align: center;
-  }
-  
-  .team-header {
+}
+
+.team-header {
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  
-  .team-grid {
+    text-align: center;
+}
+
+.team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-  
-  .team-member {
+    justify-content: center;
+}
+
+.team-member {
     display: flex;
     align-items: center;
-  }
-  
-  .team-img {
+    animation: floatUp 1.5s ease forwards;
+}
+
+.team-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-right: 15px;
-  }
-  
-  .team-info {
+}
+
+.team-info {
     text-align: left;
-  }
-  
-  .team-name {
+}
+
+.team-name {
     color: black;
     font-size: 18px;
     margin: 0;
-  }
-  
-  .team-title {
+}
+
+.team-title {
     color: orange;
     font-size: 14px;
     margin: 0;
-  }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .about-background {
+        display: none; /* Hide the background image */
+    }
+
+    .about-container {
+        height: auto; /* Adjust height when image is hidden */
+        margin-top: 10px;
+    }
+
+    .about-text {
+        margin-top: 0; /* No need to move the text up */
+        background: none; /* Remove background for a clean look */
+        font-size: 1.2rem;
+    }
+
     .team-grid {
-      grid-template-columns: 2fr; /* Stack items on smaller screens */
+        grid-template-columns: 1fr; /* Stack team members */
     }
-  
+
     .team-img {
-      width: 50px;
-      height: 50px;
+        width: 75px;
+        height: 75px;
     }
-  
+
     .team-name {
-      font-size: 10px;
+        font-size: 16px;
     }
-  
+
     .team-title {
-      font-size: 8px;
+        font-size: 12px;
     }
-  }
-  
-  @media (max-width: 480px) {
-    .team-header {
-      font-size: 15px;
-      
+}
+
+@media (max-width: 530px) {
+    .about-text {
+        font-size: 1rem; /* Adjust font size for very small screens */
     }
-  
-    .team-img {
-      width: 50px;
-      height: 50px;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
     }
-  
-    .team-name {
-      font-size: 14px;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
-  
-    .team-title {
-      font-size: 10px;
-    }
-  }
-  
+}
