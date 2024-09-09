@@ -156,7 +156,7 @@ const Home = () => {
             />
           </div>
           <Button 
-            btnClass="read-more-btn"
+            ClassName="read-more-btn"
             onClick={() => window.location.href = '/reviews'}
             text="Read More Reviews"
             bgColor="rgb(220, 101, 41)"

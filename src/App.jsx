@@ -13,6 +13,7 @@ import PageNotFound from './component/PageNotFound/PageNotFound';
 import SignIn from './component/SignIn/SignIn';
 import SignUp from './component/SignUp/SignUp';
 import DetailPage from './component/shared/DetailPage';
+import About from './component/About/About';
 
 function App() {
   const links = [
@@ -56,6 +57,7 @@ function App() {
             <Route path="/mortgage" element={<Mortgage />} />
             <Route path="/agentfinder" element={<AgentFinder />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/About" element={<About />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/detail" element={<DetailPage />} />

@@ -1,0 +1,177 @@
+/* Main container for About section */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    background-image: url('../../assets/AboutImg.png'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Make it full height to act as a hero section */
+    
+  }
+  
+  /* Styling for About text */
+  .about-text {
+    flex: 1;
+    padding: 20px;
+    font-size: 1.5rem;
+    animation: fadeIn 1.5s ease;
+    background: rgba(255, 255, 255, 0.6); /* Add a semi-transparent background for readability */
+    border-radius: 10px;
+    z-index: 2; /* Ensure text appears above the background */
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-text p {
+    line-height: 1.6;
+    color: rgba(16, 10, 0, 0.586);
+  }
+  
+  /* Styling for Image */
+  .about-image img {
+    height: 500px;
+    width: auto;
+    z-index: 1; /* Ensure the image appears behind the text */
+    display: none; /* Hide image, as background image is used instead */
+  }
+  
+  /* Responsive styling for screens smaller than 750px */
+  @media (max-width: 750px) {
+    .about-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: url('../../assets/AboutImg.png'); /* Set the background image */
+      background-size: cover;
+      background-position: center;
+      padding: 60px 20px; /* Adjust padding for hero section */
+      /* margin-top: -60px; */
+      height: auto; /* Auto height to accommodate the content */
+      width: auto;
+    }
+   
+  
+    .about-text {
+      background: rgba(255, 255, 255, 0.6); /* Add a semi-transparent background for readability */
+      padding: 40px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+    }
+  
+    .about-text h2 {
+      font-size: 2rem;
+    }
+  
+    .about-text p {
+      font-size: 1rem;
+    }
+  
+    .about-image {
+      display: none; /* Hide the image as it will be used as a background */
+    }
+  }
+  
+  /* Keyframe animation for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(90px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .team-container {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .team-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 20px;
+  }
+  
+  .team-member {
+    display: flex;
+    align-items: center;
+  }
+  
+  .team-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .team-info {
+    text-align: left;
+  }
+  
+  .team-name {
+    color: black;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .team-title {
+    color: orange;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 2fr; /* Stack items on smaller screens */
+    }
+  
+    .team-img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .team-name {
+      font-size: 10px;
+    }
+  
+    .team-title {
+      font-size: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .team-header {
+      font-size: 15px;
+      
+    }
+  
+    .team-img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .team-name {
+      font-size: 14px;
+    }
+  
+    .team-title {
+      font-size: 10px;
+    }
+  }
+  
