@@ -28,7 +28,7 @@ const AgentFinder = () => {
         Agents are experts in the local real market and can help you buy or sell your home.
       </p>
       <SearchBar
-        placeholder="Search Properties for Sale"
+        placeholder="Search for top Agents"
         height="40px"
         width="300px"
         borderRadius="15px"

@@ -15,14 +15,21 @@ import SignUp from './component/SignUp/SignUp';
 import DetailPage from './component/shared/DetailPage';
 import About from './component/About/About';
 
+import HomeIcon from './assets/HomeIcon.png'; // Adjust the path as needed
+import BuyIcon from './assets/BuyIcon.png'; // Adjust the path as needed
+import SellIcon from './assets/SellIcon.png'; // Adjust the path as needed
+import RentIcon from './assets/RentIcon.png'; // Adjust the path as needed
+import MortgageIcon from './assets/MortgageIcon.png'; // Adjust the path as needed
+import AgentFinderIcon from './assets/AgentFinderIcon.png'; // Adjust the path as needed
+
 function App() {
   const links = [
-    { path: "/", label: "Home" },
-    { path: "/buy", label: "Buy" },
-    { path: "/sell", label: "Sell" },
-    { path: "/rent", label: "Rent" },
-    { path: "/mortgage", label: "Mortgage" },
-    { path: "/agentfinder", label: "AgentFinder" },
+    { path: "/", label: "Home", icon: HomeIcon },
+    { path: "/buy", label: "Buy", icon: BuyIcon },
+    { path: "/sell", label: "Sell", icon: SellIcon },
+    { path: "/rent", label: "Rent", icon: RentIcon },
+    { path: "/mortgage", label: "Mortgage", icon: MortgageIcon },
+    { path: "/agentfinder", label: "AgentFinder", icon: AgentFinderIcon },
   ];
 
   const buttonProps = {
@@ -43,7 +50,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar 
-           logoImage="/Images/Logo.png"
+          logoImage="/Images/Logo.png"
           logoText="HomeAcq" 
           links={links} 
           buttonProps={buttonProps} 
@@ -57,7 +64,7 @@ function App() {
             <Route path="/mortgage" element={<Mortgage />} />
             <Route path="/agentfinder" element={<AgentFinder />} />
             <Route path="/reviews" element={<Reviews />} />
-            <Route path="/About" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/detail" element={<DetailPage />} />

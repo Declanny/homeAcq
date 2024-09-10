@@ -40,7 +40,6 @@
 }
 
 .nav-menu {
-  
   list-style-type: none;
   display: flex;
   align-items: center;
@@ -58,7 +57,8 @@
   text-decoration: none;
   padding: 12px;
   font-size: 14px;
-  display: block;
+  display: flex; /* Align icon and text */
+  align-items: center; /* Center icon and text vertically */
 }
 
 .nav-link:hover {
@@ -66,10 +66,33 @@
   text-decoration: underline;
 }
 
+.nav-icon {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 8px; 
+  display: none; 
+}
+
 .button-item {
   display: flex;
   align-items: center; /* Center the button vertically */
   margin-left: 20px; /* Space between the last nav item and the button */
+}
+
+/* Update this class name to match your button component */
+.nav-button {
+  background-color: #333; /* Dark background for the button */
+  color: #fff; /* White text for the button */
+  padding: 16px 22px; /* Same padding as nav links */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Slightly rounded corners */
+  font-size: 14px; /* Same font size as nav links */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.nav-button:hover {
+  background-color: rgb(220, 101, 41); /* Change color on hover */
 }
 
 .logo-image {
@@ -80,14 +103,11 @@
 .menu-icon {
   display: none;
   cursor: pointer;
-  font-size: 24px;
 }
 
-/* Menu image icon styling */
 .menu-image {
   width: 27px; /* Adjust the size of the menu icon */
-  height: 20px; /* Adjust the size of the menu icon */
-  margin-top: 4px;
+  height: 26px; /* Adjust the size of the menu icon */
 }
 
 /* Hide nav menu for mobile devices */
@@ -96,39 +116,104 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
+
+/* Sidebar Styles for Mobile and Tablets */
+@media (max-width: 1025px) {
   .logo {
     font-size: 20px; /* Decrease font size */
   }
 
   .nav-menu {
-    position: absolute;
-    top: 60px;
+    position: fixed; /* Fix the sidebar to the side of the screen */
+    top: 60px; /* Adjust to be below the navbar */
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for the sidebar */
     flex-direction: column;
     width: 100%;
-    height: calc(100vh - 60px);
-    justify-content: center;
-    align-items: center;
+    height: calc(100vh - 60px); /* Full viewport height minus navbar height */
+    padding: 20px; /* Add padding to avoid content sticking to the edges */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: flex-start; /* Align items to the left */
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 999; /* Ensure it's above other content */
   }
-
   .nav-menu.active {
     transform: translateX(0);
   }
+  
+  .nav-button {
+    margin-left: 20px; /* Adjust margin for buttons */
+  }
 
   .nav-item {
-    margin: 20px 0;
+    margin: 0; /* Remove margin for better alignment */
+  }
+
+  .nav-link {
+    padding: 22px; /* Increased padding */
+    font-size: 16px; /* Adjusted font size for better readability */
   }
 
   .button-item {
     margin-top: 20px;
   }
 
+  .nav-button {
+    padding: 22px; /* Same padding as nav links */
+  }
+
   .menu-icon {
     display: block; /* Show the menu icon on mobile */
+  }
+  
+}
+
+/* Sidebar Styles for Tablets */
+@media (max-width: 420px) {
+  .logo {
+    font-size: 18px; /* Further decrease font size for smaller screens */
+  }
+
+  .nav-menu {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .nav-button {
+    margin-left: 15px; /* Adjust margin for smaller screens */
+  }
+
+  .nav-item {
+    margin: 0; /* Remove margin for better alignment */
+  }
+
+  .nav-link {
+    padding: 20px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .button-item {
+    margin-top: 15px;
+  }
+
+  .nav-button {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+  
+  .menu-icon {
+    display: block; /* Ensure the menu icon is visible on tablets */
+  }
+
+  .nav-icon {
+    display: block;
+    width: 20px; /* Adjust size of nav icons */
+    height: 20px; /* Adjust size of nav icons */
+    margin-right: 8px; /* Space between icon and text */
+  }
+}
+
+@media (max-width: 300px) {
+  .nav-button {
+    margin-left: 10px; /* Adjust margin for very small screens */
   }
 }

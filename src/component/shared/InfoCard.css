@@ -1,0 +1,28 @@
+.info-card {
+    border-radius: 8px;
+    border: 2px solid rgb(98, 68, 12);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+  
+  .info-card-icon {
+    object-fit: contain; /* Ensure icon doesn't stretch */
+    margin-bottom: 10px;
+  }
+  
+  .info-card-text {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .info-card-description {
+    color: orange;
+    font-size: 12px;
+    text-align: left;
+  }
+  

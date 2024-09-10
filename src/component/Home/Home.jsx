@@ -164,6 +164,7 @@ const Home = () => {
             btnBorder="none"
             borderRadius="5px"
             padding="8px 16px"
+            btnClass={"nav-button"}
             fontSize="14px"
             cursor="pointer"
             transition="background-color 0.3s ease"

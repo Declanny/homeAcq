@@ -11,7 +11,7 @@ import Homeacq2 from '../../assets/Homeacq2.png';
 import Homeacq3 from '../../assets/Homeacq3.png';
 import Homeacq4 from '../../assets/Homeacq4.png';
 import Card from '../shared/Card';
-import Button from '../shared/Button';
+import Button from '../shared/Button'; 
 
 const Buy = () => {
   return (

@@ -9,13 +9,17 @@ const Button = ({
   text,
   onClick,
   width, 
+  paddingLeft, 
+  paddingTopBottom,
+  paddingRight,
   className, // Accept a className prop for external styling
+  btnClass, // Add a class for the button
 }) => {
   const styles = {
     btn: {
       backgroundColor: bgColor || 'blue',
       color: txColor || 'white',
-      padding: '8px 16px',
+      padding: `${paddingTopBottom || '8px'} ${paddingRight || '16px'} ${paddingTopBottom || '8px'} ${paddingLeft || '16px'}`, 
       border: btnBorder || 'none',
       borderRadius: '5px',
       cursor: 'pointer',
@@ -30,7 +34,7 @@ const Button = ({
 
   return (
     <button 
-      className={className}  // Pass the className here
+      className={`${className || ''} ${btnClass || ''}`} // Combine the className and btnClass
       style={styles.btn} 
       onClick={onClick || btnFunc}
     >
@@ -48,7 +52,11 @@ Button.propTypes = {
   txColor: PropTypes.string,
   onClick: PropTypes.func,
   width: PropTypes.string,
-  className: PropTypes.string, // Add className prop validation
+  paddingLeft: PropTypes.string,
+  paddingTopBottom: PropTypes.string,
+  paddingRight: PropTypes.string,
+  className: PropTypes.string,
+  btnClass: PropTypes.string, // Add btnClass prop validation
 };
 
 export default Button;

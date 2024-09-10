@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useLocation } from 'react-router-dom';
 import Button from '../shared/Button'; 
 import './Navbar.css'; 
-import Menu from "../../assets/Menu.png"; // Assuming Menu.png is still in the assets folder
+import Menu from "../../assets/Menu.png"; // Menu icon
+import Close from "../../assets/Close.png"; // Close icon
 
 const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
   const [menuOpen, setMenuOpen] = useState(false); // State for toggling menu
@@ -22,19 +23,22 @@ const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
           {logoImage && <img src={logoImage} alt="Logo" className="logo-image" />} {/* Logo Image */}
           <Link to="/" className="logo-link">{logoText}</Link>
         </div>
-        {/* Replace FaBars with your image */}
+        {/* Show Menu or Close icon based on menu state */}
         <div className="menu-icon" onClick={handleMenuToggle}>
-          <img src={Menu} alt="Menu" className="menu-image" /> {/* Image for Menu Toggle */}
+          <img src={menuOpen ? Close : Menu} alt={menuOpen ? "Close" : "Menu"} className="menu-image" />
         </div>
         <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
           {links.map((link, index) => (
             <li key={index} className="nav-item">
-              <Link to={link.path} className="nav-link" onClick={handleMenuToggle}>{link.label}</Link>
+              <Link to={link.path} className="nav-link" onClick={handleMenuToggle}>
+                <img src={link.icon} alt={`${link.label} Icon`} className="nav-icon" />
+                {link.label}
+              </Link>
             </li>
           ))}
           <li className="nav-item button-item">
             <Link to="/signin" onClick={handleMenuToggle}>
-              <Button {...buttonProps} />
+              <Button {...buttonProps} btnClass="nav-button" /> {/* Pass btnClass */}
             </Link>
           </li>
         </ul>
@@ -49,6 +53,7 @@ Navbar.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape({
     path: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired, // Update prop type for icon
   })).isRequired,
   buttonProps: PropTypes.shape({
     btnClass: PropTypes.string,

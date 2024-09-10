@@ -150,3 +150,84 @@
         transform: translateY(0);
     }
 }
+
+
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 20px;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Info Cards Grid Layout */
+.info-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+/* Individual Info Card Styling */
+.info-card {
+    width: calc(25% - 20px); /* Default to 4 cards per row */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid rgb(135, 99, 27);
+    border-radius: 8px;
+    margin: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: scale(1.05); /* Optional hover effect */
+}
+
+.info-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: -15px; /* Adjust icon margin */
+}
+
+.info-card-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.info-card-description {
+    font-size: 12px;
+    color: orange;
+}
+
+/* Responsive Layout Adjustments */
+
+/* For screens between 900px and 1100px - 3 cards per row */
+@media (max-width: 1100px) {
+    .info-card {
+        width: calc(33.33% - 20px); /* 3 cards per row */
+    }
+}
+
+/* For screens between 600px and 900px - 2 cards per row */
+@media (max-width: 900px) {
+    .info-card {
+        width: calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+/* For screens below 600px - 1 card per row */
+@media (max-width: 600px) {
+    .info-card {
+        width: 100%; /* Full width (1 card per row) */
+    }
+}
