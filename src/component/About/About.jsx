@@ -7,7 +7,7 @@ import Member4 from '../../assets/Member4.png';
 import Easy from '../../assets/Easy.png';
 import HeartShakeIcon from '../../assets/HeartShakeIcon.png';
 import WorldIcon from '../../assets/WorldIcon.png';
-import sellIcon from '../../assets/sellIcon.png';
+import SellIcon from '../../assets/SellIcon.png';
 import Shield from '../../assets/Shield.png';
 
 import './About.css';
@@ -122,7 +122,7 @@ const About = () => {
               description: 'We operate worldwide with a large market presence.',
             },
             {
-              iconSrc: sellIcon,
+              iconSrc: SellIcon,
               text: 'Sell Faster',
               description: 'Our platform helps you sell your home faster.',
             },
