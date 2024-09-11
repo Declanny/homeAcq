@@ -4,6 +4,7 @@ import Member1 from '../../assets/Member1.png';
 import Member2 from '../../assets/Member2.png';
 import Member3 from '../../assets/Member3.png';
 // import Member4 from '../../assets/Member4.png';
+import { useState } from "react";
 import Easy from '../../assets/Easy.png';
 import HeartShakeIcon from '../../assets/HeartShakeIcon.png';
 import WorldIcon from '../../assets/WorldIcon.png';
@@ -68,6 +69,17 @@ InfoCard.propTypes = {
 }
 
 const About = () => {
+
+  const [likes, setLikes] = useState(0);
+
+  const handleLike = () => {
+    setLikes(likes+1)
+  }
+
+  const handleDislike = () => {
+    setLikes(likes+1)
+  }
+
   return (
     <div>
       {/* Main About section */}

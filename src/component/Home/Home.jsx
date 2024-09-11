@@ -18,11 +18,11 @@ import TestimonialCard from '../shared/TestimonialCard';
 const Home = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleLike = (id) => {
+  const handleLike = () => {
     // Handle like button click
   };
 
-  const handleDislike = (id) => {
+  const handleDislike = () => {
     // Handle dislike button click
   };
 
