@@ -22,11 +22,13 @@ import RentIcon from './assets/RentIcon.png'; // Adjust the path as needed
 import MortgageIcon from './assets/MortgageIcon.png'; // Adjust the path as needed
 import AgentFinderIcon from './assets/AgentFinderIcon.png'; // Adjust the path as needed
 
+import {SellIcon} from "./assets/index"
+
 function App() {
   const links = [
     { path: "/", label: "Home", icon: HomeIcon },
     { path: "/buy", label: "Buy", icon: BuyIcon },
-    // { path: "/sell", label: "Sell", icon: SellIcon },
+    { path: "/sell", label: "Sell", icon: SellIcon },
     { path: "/rent", label: "Rent", icon: RentIcon },
     { path: "/mortgage", label: "Mortgage", icon: MortgageIcon },
     { path: "/agentfinder", label: "AgentFinder", icon: AgentFinderIcon },
