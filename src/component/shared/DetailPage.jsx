@@ -1,14 +1,14 @@
 import { useLocation } from 'react-router-dom';
 import './DetailPage.css';
 import Button from './Button';
-import villaIcon from '../../assets/villa.png';
-import nestyale from '../../assets/nestyale.png';
-import garage from '../../assets/garage.png';
-import waves from '../../assets/waves.png';
+import villaIcon from '../../../public/assets/villa.png';
+import nestyale from '../../../public/assets/nestyale.png';
+import garage from '../../../public/assets/garage.png';
+import waves from '../../../public/assets/waves.png';
 import Card from '../shared/Card';
-import Homeacq1 from '../../assets/Homeacq1.png'; 
-import Homeacq2 from '../../assets/Homeacq2.png';
-import Homeacq3 from '../../assets/Homeacq3.png';
+import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
+import Homeacq2 from '../../../public/assets/Homeacq2.png';
+import Homeacq3 from '../../../public/assets/Homeacq3.png';
 
 const DetailPage = () => {
   const location = useLocation();

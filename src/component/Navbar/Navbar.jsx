@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useLocation } from 'react-router-dom';
 import Button from '../shared/Button'; 
 import './Navbar.css'; 
-import Menu from "../../assets/Menu.png"; // Menu icon
-import Close from "../../assets/Close.png"; // Close icon
+import Menu from "../../../public/assets/Menu.png"; // Menu icon
+import Close from "../../../public/assets/Close.png"; // Close icon
 
 const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
   const [menuOpen, setMenuOpen] = useState(false); // State for toggling menu

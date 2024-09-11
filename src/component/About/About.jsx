@@ -1,15 +1,15 @@
 import PropTypes from "prop-types"
-import AboutImg from '../../assets/AboutImg.png'; // Import the image
-import Member1 from '../../assets/Member1.png';
-import Member2 from '../../assets/Member2.png';
-import Member3 from '../../assets/Member3.png';
+import AboutImg from '../../../public/assets/AboutImg.png'; // Import the image
+import Member1 from '../../../public/assets/Member1.png';
+import Member2 from '../../../public/assets/Member2.png';
+import Member3 from '../../../public/assets/Member3.png';
 // import Member4 from '../../assets/Member4.png';
 import { useState } from "react";
-import Easy from '../../assets/Easy.png';
-import HeartShakeIcon from '../../assets/HeartShakeIcon.png';
-import WorldIcon from '../../assets/WorldIcon.png';
+import Easy from '../../../public/assets/Easy.png';
+import HeartShakeIcon from '../../../public/assets/HeartShakeIcon.png';
+import WorldIcon from '../../../public/assets/WorldIcon.png';
 // import SellIcon from '../../assets/SellIcon.png';
-import Shield from '../../assets/Shield.png';
+import Shield from '../../../public/assets/Shield.png';
 
 // import  Member4  from "../../assets/index";
 // import {SellIcon} from "../../assets/index"

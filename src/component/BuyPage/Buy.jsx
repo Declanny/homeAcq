@@ -1,15 +1,15 @@
 import './BuyPage.css'; // Import the CSS file
 import SearchBar from '../shared/SearchBar';
-import searchIcon from '../../assets/search.png';
-import homeIcon from '../../assets/home.png';
-import villaIcon from '../../assets/villa.png';
-import foundationIcon from '../../assets/foundation.png';
-import scheduleIcon from '../../assets/schedule.png';
-import vectorIcon from '../../assets/vector.png';
-import Homeacq1 from '../../assets/Homeacq1.png'; 
-import Homeacq2 from '../../assets/Homeacq2.png';
-import Homeacq3 from '../../assets/Homeacq3.png';
-import Homeacq4 from '../../assets/Homeacq4.png';
+import searchIcon from '../../../public/assets/search.png';
+import homeIcon from '../../../public/assets/home.png';
+import villaIcon from '../../../public/assets/villa.png';
+import foundationIcon from '../../../public/assets/foundation.png';
+import scheduleIcon from '../../../public/assets/schedule.png';
+import vectorIcon from '../../../public/assets/vector.png';
+import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
+import Homeacq2 from '../../../public/assets/Homeacq2.png';
+import Homeacq3 from '../../../public/assets/Homeacq3.png';
+import Homeacq4 from '../../../public/assets/Homeacq4.png';
 import Card from '../shared/Card';
 import Button from '../shared/Button'; 
 

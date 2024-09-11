@@ -2,15 +2,15 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Home.css';
 
 // Import the image files
-import Homeacq1 from '../../assets/Homeacq1.png'; 
-import Homeacq2 from '../../assets/Homeacq2.png';
-import Homeacq3 from '../../assets/Homeacq3.png';
-import Homeacq4 from '../../assets/Homeacq4.png';
-import Agent4 from '../../assets/Agent4.png';
-import Agent3 from '../../assets/Agent3.png';
-import Agent2 from '../../assets/Agent2.png';
-import Agent1 from '../../assets/Agent1.png';
-import img1 from '../../assets/img1.png';  // Adjusted relative path to match your folder structure
+import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
+import Homeacq2 from '../../../public/assets/Homeacq2.png';
+import Homeacq3 from '../../../public/assets/Homeacq3.png';
+import Homeacq4 from '../../../public/assets/Homeacq4.png';
+import Agent4 from '../../../public/assets/Agent4.png';
+import Agent3 from '../../../public/assets/Agent3.png';
+import Agent2 from '../../../public/assets/Agent2.png';
+import Agent1 from '../../../public/assets/Agent1.png';
+import img1 from '../../../public/assets/img1.png';  // Adjusted relative path to match your folder structure
 import Button from '../shared/Button';
 import Card from '../shared/Card';
 import TestimonialCard from '../shared/TestimonialCard';

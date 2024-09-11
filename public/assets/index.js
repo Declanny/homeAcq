@@ -1,6 +1,7 @@
 import HomeIcon from './HomeIcon.png';
 import BuyIcon from './BuyIcon.png';
-import SellIcon from './SellIcon.png'; // Make sure the path is correct
+// src/assets/index.js
+import SellIcon from './SellIcon.png'; 
 import RentIcon from './RentIcon.png';
 import MortgageIcon from './MortgageIcon.png';
 import AgentFinderIcon from './AgentFinderIcon.png';

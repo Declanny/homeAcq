@@ -1,13 +1,13 @@
 // src/pages/AgentFinder.jsx
 
 
-import Agent4 from '../../assets/Agent4.png';
-import Agent3 from '../../assets/Agent3.png';
-import Agent2 from '../../assets/Agent2.png';
-import Agent1 from '../../assets/Agent1.png';
+import Agent4 from '../../../public/assets/Agent4.png';
+import Agent3 from '../../../public/assets/Agent3.png';
+import Agent2 from '../../../public/assets/Agent2.png';
+import Agent1 from '../../../public/assets/Agent1.png';
 import SearchBar from '../shared/SearchBar';
 import Agent from '../shared/Agent';
-import searchIcon from '../../assets/search.png';
+import searchIcon from '../../../public/assets/search.png';
 import './AgentFinder.css'; // Import the external CSS file
 
 const AgentFinder = () => {

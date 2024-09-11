@@ -15,12 +15,12 @@ import SignUp from './component/SignUp/SignUp';
 import DetailPage from './component/shared/DetailPage';
 import About from './component/About/About';
 
-import HomeIcon from './assets/HomeIcon.png'; // Adjust the path as needed
-import BuyIcon from './assets/BuyIcon.png'; // Adjust the path as needed
-import { SellIcon } from "./assets"; // Adjusted import for SellIcon
-import RentIcon from './assets/RentIcon.png'; // Adjust the path as needed
-import MortgageIcon from './assets/MortgageIcon.png'; // Adjust the path as needed
-import AgentFinderIcon from './assets/AgentFinderIcon.png'; // Adjust the path as needed
+import HomeIcon from '../public/assets/HomeIcon.png'; // Adjust the path as needed
+import BuyIcon from '../public/assets/BuyIcon.png'; // Adjust the path as needed
+import { SellIcon } from "../public/assets"; // Adjusted import for SellIcon
+import RentIcon from '../public/assets/RentIcon.png'; // Adjust the path as needed
+import MortgageIcon from '../public/assets/MortgageIcon.png'; // Adjust the path as needed
+import AgentFinderIcon from '../public/assets/AgentFinderIcon.png'; // Adjust the path as needed
 
 function App() {
   const links = [

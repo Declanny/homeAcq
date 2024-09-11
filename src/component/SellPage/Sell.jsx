@@ -1,12 +1,12 @@
 
 import Card from '../shared/Card';
 import SearchBar from '../shared/SearchBar';
-import searchIcon from '../../assets/search.png';
+import searchIcon from '../../../public/assets/search.png';
 
-import Homeacq1 from '../../assets/Homeacq1.png'; 
-import Homeacq2 from '../../assets/Homeacq2.png';
-import Homeacq3 from '../../assets/Homeacq3.png';
-import Homeacq4 from '../../assets/Homeacq4.png';
+import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
+import Homeacq2 from '../../../public/assets/Homeacq2.png';
+import Homeacq3 from '../../../public/assets/Homeacq3.png';
+import Homeacq4 from '../../../public/assets/Homeacq4.png';
 import './Sell.css'; // Add any additional styling here
 
 const Sell = () => {
