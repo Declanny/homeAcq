@@ -3,12 +3,14 @@ import AboutImg from '../../assets/AboutImg.png'; // Import the image
 import Member1 from '../../assets/Member1.png';
 import Member2 from '../../assets/Member2.png';
 import Member3 from '../../assets/Member3.png';
-import Member4 from '../../assets/Member4.png';
+// import Member4 from '../../assets/Member4.png';
 import Easy from '../../assets/Easy.png';
 import HeartShakeIcon from '../../assets/HeartShakeIcon.png';
 import WorldIcon from '../../assets/WorldIcon.png';
 import SellIcon from '../../assets/SellIcon.png';
 import Shield from '../../assets/Shield.png';
+
+import { Member4 } from "../../assets/index";
 
 import './About.css';
 import TestimonialCard from "../shared/TestimonialCard";

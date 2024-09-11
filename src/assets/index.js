@@ -1,4 +1,5 @@
-import SellIcon from "./SellIcon.png"
+import SellIcon from "./SellIcon.png";
+import Member4 from "./Member4.png";
 
 
-export {SellIcon}
+export {SellIcon,Member4}
