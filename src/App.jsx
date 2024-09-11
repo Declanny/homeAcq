@@ -15,16 +15,22 @@ import SignUp from './component/SignUp/SignUp';
 import DetailPage from './component/shared/DetailPage';
 import About from './component/About/About';
 
-// import HomeIcon from './assets/HomeIcon.png'; // Adjust the path as needed
-// import BuyIcon from './assets/BuyIcon.png'; // Adjust the path as needed
-// // import SellIcon from './assets/SellIcon.png'; // Adjust the path as needed
-// import RentIcon from './assets/RentIcon.png'; // Adjust the path as needed
-// import MortgageIcon from './assets/MortgageIcon.png'; // Adjust the path as needed
-// import AgentFinderIcon from './assets/AgentFinderIcon.png'; // Adjust the path as needed
-
-// import {SellIcon} from "./assets/index"
+import HomeIcon from './assets/HomeIcon.png'; // Adjust the path as needed
+import BuyIcon from './assets/BuyIcon.png'; // Adjust the path as needed
+import { SellIcon } from "./assets"; // Adjusted import for SellIcon
+import RentIcon from './assets/RentIcon.png'; // Adjust the path as needed
+import MortgageIcon from './assets/MortgageIcon.png'; // Adjust the path as needed
+import AgentFinderIcon from './assets/AgentFinderIcon.png'; // Adjust the path as needed
 
 function App() {
+  const links = [
+    { path: "/", label: "Home", icon: HomeIcon },
+    { path: "/buy", label: "Buy", icon: BuyIcon },
+    { path: "/sell", label: "Sell", icon: SellIcon },
+    { path: "/rent", label: "Rent", icon: RentIcon },
+    { path: "/mortgage", label: "Mortgage", icon: MortgageIcon },
+    { path: "/agentfinder", label: "AgentFinder", icon: AgentFinderIcon },
+  ];
 
   const buttonProps = {
     btnClass: "sign-in-btn",
@@ -46,7 +52,7 @@ function App() {
         <Navbar 
           logoImage="/Images/Logo.png"
           logoText="HomeAcq" 
-          // links={links} 
+          links={links} 
           buttonProps={buttonProps} 
         />
         <div className="content">

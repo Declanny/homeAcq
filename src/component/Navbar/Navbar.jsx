@@ -6,7 +6,7 @@ import './Navbar.css';
 import Menu from "../../assets/Menu.png"; // Menu icon
 import Close from "../../assets/Close.png"; // Close icon
 
-const Navbar = ({ logoText, logoImage, buttonProps }) => {
+const Navbar = ({ logoText, logoImage, links, buttonProps }) => {
   const [menuOpen, setMenuOpen] = useState(false); // State for toggling menu
   const location = useLocation();
   const isFixed = location.pathname === "/"; // Change "/" to the path where you want the navbar to overlay
@@ -28,14 +28,14 @@ const Navbar = ({ logoText, logoImage, buttonProps }) => {
           <img src={menuOpen ? Close : Menu} alt={menuOpen ? "Close" : "Menu"} className="menu-image" />
         </div>
         <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-          {/* {links.map((link, index) => (
+          {links.map((link, index) => (
             <li key={index} className="nav-item">
               <Link to={link.path} className="nav-link" onClick={handleMenuToggle}>
                 <img src={link.icon} alt={`${link.label} Icon`} className="nav-icon" />
                 {link.label}
               </Link>
             </li>
-          ))} */}
+          ))}
           <li className="nav-item button-item">
             <Link to="/signin" onClick={handleMenuToggle}>
               <Button {...buttonProps} btnClass="nav-button" /> {/* Pass btnClass */}
@@ -71,5 +71,3 @@ Navbar.propTypes = {
 };
 
 export default Navbar;
-
-
