@@ -11,8 +11,8 @@ import WorldIcon from '../../assets/WorldIcon.png';
 // import SellIcon from '../../assets/SellIcon.png';
 import Shield from '../../assets/Shield.png';
 
-import  Member4  from "../../assets/index";
-import {SellIcon} from "../../assets/index"
+// import  Member4  from "../../assets/index";
+// import {SellIcon} from "../../assets/index"
 
 import './About.css';
 import TestimonialCard from "../shared/TestimonialCard";
@@ -103,7 +103,7 @@ const About = () => {
             { name: 'Matt Bobby', title: 'CEO and Founder', img: Member1 },
             { name: 'Sarah Parker', title: 'Chief Operating Officer', img: Member2 },
             { name: 'John Doe', title: 'Head of Marketing', img: Member3 },
-            { name: 'Emily Stone', title: 'Lead Developer', img: Member4 },
+            // { name: 'Emily Stone', title: 'Lead Developer', img: Member4 },
           ].map((member, index) => (
             <div key={index} className="team-member">
               <img src={member.img} alt={member.name} className="team-img" />
@@ -136,11 +136,11 @@ const About = () => {
               text: 'Global Reach',
               description: 'We operate worldwide with a large market presence.',
             },
-            {
-              iconSrc: SellIcon,
-              text: 'Sell Faster',
-              description: 'Our platform helps you sell your home faster.',
-            },
+            // {
+            //   iconSrc: SellIcon,
+            //   text: 'Sell Faster',
+            //   description: 'Our platform helps you sell your home faster.',
+            // },
             {
               iconSrc: Shield,
               text: 'Safe and Secure',
