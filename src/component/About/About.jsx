@@ -34,7 +34,7 @@ const InfoCard = ({
         flexDirection: 'column',
         alignItems: 'flex-start', // Align content to the left
         borderRadius: '8px',
-        border: '1px solid DarkOrange',
+        border: '1px solid #793E0D',
         margin: '10px',
       }}
     >
@@ -49,7 +49,7 @@ const InfoCard = ({
         }}
       />
       <p className="info-card-text" style={{ marginBottom: '5px' }}>{text}</p>
-      <p className="info-card-description" style={{ color: 'orange' }}>{description}</p>
+      <p className="info-card-description" style={{ color: '#793E0D' }}>{description}</p>
     </div>
   );
 };

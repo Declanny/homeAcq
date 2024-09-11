@@ -203,11 +203,14 @@
     margin-bottom: 5px;
     color: black;
 }
-
 .info-card-description {
+    color: rgb(49, 33, 2);
     font-size: 12px;
-    color: orange;
-}
+    text-align: left; /* Ensure alignment to the left */
+    margin-top: 5px; /* Add spacing between the text and description */
+    flex-grow: 1; /* Allow the description to take up remaining space */
+    display: block;
+  }
 
 /* Responsive Layout Adjustments */
 
