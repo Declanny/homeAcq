@@ -11,7 +11,7 @@ import WorldIcon from '../../assets/WorldIcon.png';
 // import SellIcon from '../../assets/SellIcon.png';
 import Shield from '../../assets/Shield.png';
 
-import { Member4 } from "../../assets/index";
+import  Member4  from "../../assets/index";
 import {SellIcon} from "../../assets/index"
 
 import './About.css';
