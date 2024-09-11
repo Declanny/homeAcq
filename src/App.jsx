@@ -17,7 +17,7 @@ import About from './component/About/About';
 
 import HomeIcon from './assets/HomeIcon.png'; // Adjust the path as needed
 import BuyIcon from './assets/BuyIcon.png'; // Adjust the path as needed
-import SellIcon from './assets/SellIcon.png'; // Adjust the path as needed
+// import SellIcon from './assets/SellIcon.png'; // Adjust the path as needed
 import RentIcon from './assets/RentIcon.png'; // Adjust the path as needed
 import MortgageIcon from './assets/MortgageIcon.png'; // Adjust the path as needed
 import AgentFinderIcon from './assets/AgentFinderIcon.png'; // Adjust the path as needed
@@ -26,7 +26,7 @@ function App() {
   const links = [
     { path: "/", label: "Home", icon: HomeIcon },
     { path: "/buy", label: "Buy", icon: BuyIcon },
-    { path: "/sell", label: "Sell", icon: SellIcon },
+    // { path: "/sell", label: "Sell", icon: SellIcon },
     { path: "/rent", label: "Rent", icon: RentIcon },
     { path: "/mortgage", label: "Mortgage", icon: MortgageIcon },
     { path: "/agentfinder", label: "AgentFinder", icon: AgentFinderIcon },
