@@ -12,6 +12,7 @@ const SearchBar = ({
   border = 'none',
   showRadio = false, // Control the display of the radio button
   radioName = '', // Name for the radio button group
+  onChange, // New prop for handling input changes
 }) => {
   return (
     <div style={{ 
@@ -45,6 +46,7 @@ const SearchBar = ({
       <input
         type="text"
         placeholder={placeholder}
+        onChange={onChange} // Add onChange handler here
         style={{
           height: '100%',
           border: 'none', // No border on input itself to avoid double borders
@@ -69,6 +71,7 @@ SearchBar.propTypes = {
   width: PropTypes.string,
   showRadio: PropTypes.bool, // New prop type for the radio button
   radioName: PropTypes.string, // New prop type for the radio button name
+  onChange: PropTypes.func, // New prop type for the onChange handler
 };
 
 export default SearchBar;

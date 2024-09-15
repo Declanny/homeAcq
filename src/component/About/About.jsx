@@ -89,7 +89,7 @@ const About = () => {
           <h2>About Us</h2>
           <p>
             Founded in 2016, Homecq is a real estate technology company with a mission
-            to empower people to move freely. We're re-imagining the way people buy, sell, and rent homes, 
+            to empower people to move freely. We are re-imagining the way people buy, sell, and rent homes, 
             with a focus on design, quality, and community.
           </p>
         </div>
