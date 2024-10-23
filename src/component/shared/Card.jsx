@@ -30,7 +30,7 @@ Card.propTypes = {
   image: PropTypes.string,
   price: PropTypes.number,
   name: PropTypes.string,
-  address: PropTypes.string.isRequired, 
+  address: PropTypes.string, // This makes the address prop optional
   imageHeight: PropTypes.string,
 };
 

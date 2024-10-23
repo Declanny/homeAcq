@@ -2,109 +2,136 @@ import { useState } from 'react';
 import Card from '../shared/Card';
 import SearchBar from '../shared/SearchBar';
 import searchIcon from '../../../public/assets/search.png';
-
-import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
+import Homeacq1 from '../../../public/assets/Homeacq1.png';
 import Homeacq2 from '../../../public/assets/Homeacq2.png';
 import Homeacq3 from '../../../public/assets/Homeacq3.png';
 import Homeacq4 from '../../../public/assets/Homeacq4.png';
-import './Rent.css'; // Add any additional styling here
+import './Rent.css'; // Import the CSS file for additional styling
+
+const properties = [
+  { title: "Urban Apartment", price: 4500000, image: Homeacq1, description: "Modern apartment in city center.", name: "City Apartment", address: "456 City Lane, Abuja", type: "Apartment", state: "Abuja", features: ["Furnished", "Air Conditioning"] },
+  { title: "Luxury Villa", price: 10000000, image: Homeacq2, description: "Luxurious villa with private pool.", name: "Villa Serenity", address: "789 Sunset Boulevard, Ikoyi", type: "Villa", state: "Lagos", features: ["Pool", "Garden"] },
+  { title: "Modern Duplex", price: 6000000, image: Homeacq3, description: "Spacious duplex with rooftop terrace.", name: "Duplex Haven", address: "654 Green Park, Lekki", type: "Duplex", state: "Lagos", features: ["Rooftop Terrace", "Parking"] },
+  { title: "Cozy Studio", price: 2500000, image: Homeacq4, description: "Cozy studio perfect for singles.", name: "Studio Comfort", address: "321 Countryside Road, Abuja", type: "Studio", state: "Abuja", features: ["Furnished", "Close to Public Transport"] },
+];
 
 const Rent = () => {
-  // Initial data for the properties
-  const properties = [
-    { id: 1, title: "Urban Apartment", price: 4500000, image: Homeacq1, name: "City Apartment", location: "Abuja", state: "Abuja" },
-    { id: 2, title: "Luxury Villa", price: 10000000, image: Homeacq2, name: "Villa Serenity", location: "Ikoyi", state: "Lagos" },
-    { id: 3, title: "Modern Duplex", price: 6000000, image: Homeacq3, name: "Duplex Haven", location: "Lekki", state: "Lagos" },
-    { id: 4, title: "Cozy Studio", price: 2500000, image: Homeacq4, name: "Studio Comfort", location: "Abuja", state: "Abuja" },
-    { id: 5, title: "Penthouse Suite", price: 15000000, image: Homeacq1, name: "Penthouse Luxury", location: "Victoria Island", state: "Lagos" },
-    { id: 6, title: "Beachfront Villa", price: 20000000, image: Homeacq2, name: "Ocean View Villa", location: "Lekki", state: "Lagos" },
-    { id: 7, title: "Charming Cottage", price: 3500000, image: Homeacq3, name: "Cottage Delight", location: "Ibadan", state: "Oyo" },
-    { id: 8, title: "Luxury Mansion", price: 25000000, image: Homeacq4, name: "Mansion Grandeur", location: "Ikoyi", state: "Lagos" },
-    { id: 9, title: "Elegant Apartment", price: 5000000, image: Homeacq1, name: "Elegance Suites", location: "Victoria Island", state: "Lagos" },
-    { id: 10, title: "Modern Loft", price: 4000000, image: Homeacq2, name: "Loft Living", location: "Abuja", state: "Abuja" },
-    { id: 11, title: "Spacious Villa", price: 8000000, image: Homeacq3, name: "Spacious Haven", location: "Lekki", state: "Lagos" },
-    { id: 12, title: "Urban Loft", price: 5500000, image: Homeacq4, name: "Urban Living", location: "Ikoyi", state: "Lagos" },
-  ];
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedState, setSelectedState] = useState('All');
+  const [selectedPropertyType, setSelectedPropertyType] = useState('All');
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
 
-  // State to hold current filter inputs (before applying)
-  const [filterInputs, setFilterInputs] = useState({
-    location: '',
-    price: '',
-    state: '',
-  });
-
-  // Handle input changes in the search bars
-  const handleInputChange = (filterType, value) => {
-    setFilterInputs({
-      ...filterInputs,
-      [filterType]: value,
-    });
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
   };
 
-  // Filter properties based on input filters
-  const filteredProperties = properties.filter(property => {
-    const isLocationMatch = filterInputs.location === '' || property.location.toLowerCase().includes(filterInputs.location.toLowerCase());
-    const isStateMatch = filterInputs.state === '' || property.state.toLowerCase() === filterInputs.state.toLowerCase();
-    const isPriceMatch = filterInputs.price === '' || property.price <= Number(filterInputs.price);
+  const handleStateChange = (e) => {
+    setSelectedState(e.target.value);
+  };
 
-    return isLocationMatch && isStateMatch && isPriceMatch;
+  const handleTypeChange = (e) => {
+    setSelectedPropertyType(e.target.value);
+  };
+
+  const handleFeatureChange = (e) => {
+    const { value, checked } = e.target;
+    setSelectedFeatures(prevFeatures =>
+      checked
+        ? [...prevFeatures, value]
+        : prevFeatures.filter(feature => feature !== value)
+    );
+  };
+
+  const filteredProperties = properties.filter(property => {
+    const isStateMatch = selectedState === 'All' || property.state === selectedState;
+    const isTypeMatch = selectedPropertyType === 'All' || property.type === selectedPropertyType;
+    const hasFeatures = selectedFeatures.every(feature => property.features.includes(feature));
+    
+    return (
+      (property.address.toLowerCase().includes(searchTerm) ||
+      property.title.toLowerCase().includes(searchTerm) ||
+      property.description.toLowerCase().includes(searchTerm)) &&
+      isStateMatch &&
+      isTypeMatch &&
+      hasFeatures
+    );
   });
 
   return (
-    <div className="rent-page">
-      <h1>Rent Properties</h1>
-      
-      <div className="filter-section">
-        {/* Search Bars for Location, Price, and State */}
-        <SearchBar
-          placeholder="Search by Location"
-          height="40px"
-          width="350px"
-          borderRadius="15px"
-          border="1px solid orange"
-          onChange={(e) => handleInputChange('location', e.target.value)}
-        >
-          <img src={searchIcon} alt="Search" />
-        </SearchBar>
+    <div className="rentContainer">
+      <div className="filterArea">
+        <div className="filterGroup">
+          <label>State:</label>
+          <select value={selectedState} onChange={handleStateChange}>
+            <option value="All">All States</option>
+            <option value="Abuja">Abuja</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Ogun">Ogun</option>
+            <option value="Kaduna">Kaduna</option>
+            <option value="Kano">Kano</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Anambra">Anambra</option>
+          </select>
+        </div>
 
-        <SearchBar
-          placeholder="Max Price"
-          height="40px"
-          width="350px"
-          borderRadius="15px"
-          border="1px solid orange"
-          onChange={(e) => handleInputChange('price', e.target.value)}
-        >
-          <img src={searchIcon} alt="Search" />
-        </SearchBar>
+        <div className="filterGroup">
+          <label>Property Type:</label>
+          <select value={selectedPropertyType} onChange={handleTypeChange}>
+            <option value="All">All Types</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Villa">Villa</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Studio">Studio</option>
+            <option value="Cottage">Cottage</option>
+            <option value="Mansion">Mansion</option>
+            <option value="Loft">Loft</option>
+            <option value="Bungalow">Bungalow</option>
+          </select>
+        </div>
 
-        <SearchBar
-          placeholder="Search by State"
-          height="40px"
-          width="350px"
-          borderRadius="15px"
-          border="1px solid orange"
-          onChange={(e) => handleInputChange('state', e.target.value)}
-        >
-          <img src={searchIcon} alt="Search" />
-        </SearchBar>
+        <div className="filterGroup">
+          <label>Features:</label>
+          <div>
+            <input type="checkbox" value="Furnished" onChange={handleFeatureChange} /> Furnished
+            <input type="checkbox" value="Air Conditioning" onChange={handleFeatureChange} /> Air Conditioning
+          </div>
+        </div>
+
       </div>
 
-      <div className="card-container">
+      <div className="mainArea">
+        <div className="searchHeader">
+          <h5>Explore Properties for Rent</h5>
+          <SearchBar
+            placeholder="Search Properties for Rent"
+            height="40px"
+            width="95%"
+            borderRadius="15px"
+            border="1px solid orange"
+            onChange={handleSearch}
+          >
+            <img src={searchIcon} alt="Search" />
+          </SearchBar>
+        </div>
         {filteredProperties.length > 0 ? (
-          filteredProperties.map(property => (
-            <Card 
-              key={property.id}
-              title={property.title}
-              price={property.price}
-              image={property.image}
-              name={property.name}
-              location={property.location}
-              state={property.state}
-            />
-          ))
+          <div className="propertyGrid">
+            {filteredProperties.map((property, index) => (
+              <Card
+                key={index}
+                title={property.title}
+                price={property.price}
+                image={property.image}
+                description={property.description}
+                name={property.name}
+                address={property.address}
+              />
+            ))}
+          </div>
         ) : (
-          <p>No properties found</p>
+          <div className="noResults">
+            <p>No properties found.</p>
+            <a href="#">Try a different search</a>
+          </div>
         )}
       </div>
     </div>

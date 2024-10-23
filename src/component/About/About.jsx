@@ -102,6 +102,7 @@ const About = () => {
           {[
             { name: 'Matt Bobby', title: 'CEO and Founder', img: Member1 },
             { name: 'Sarah Parker', title: 'Chief Operating Officer', img: Member2 },
+            { name: 'Matt Bobby', title: 'CEO and Founder', img: Member1 },
             { name: 'John Doe', title: 'Head of Marketing', img: Member3 },
             // { name: 'Emily Stone', title: 'Lead Developer', img: Member4 },
           ].map((member, index) => (
@@ -188,6 +189,14 @@ const About = () => {
               reviewText="Fantastic service from start to finish. Our agent’s expertise was invaluable in finding our dream home."
               onLike={() => handleLike(4)}
               onDislike={() => handleDislike(4)}
+            />
+            <TestimonialCard 
+              name="Sarah Brown" 
+              date="June 10, 2024"
+              rating={5}
+              reviewText="Professional and personable. They made our first home buying experience wonderful. We couldn’t be happier!"
+              onLike={() => handleLike(3)}
+              onDislike={() => handleDislike(3)}
             />
           </div>
           <Button 

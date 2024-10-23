@@ -1,83 +1,159 @@
+/* Container for the whole page */
 .buy-page {
   display: flex;
+  gap: 20px;
+  padding: 20px;
 }
 
-.sidebar {
-  width: 300px;
-  padding: 20px;
-  /* background-color: #f4f4f4; */
+/* Sidebar for filter options */
+.filter-options {
+  width: 250px; /* Set a fixed width for larger screens */
+  flex-shrink: 0;
+  background-color: aliceblue; /* Light background for the filter section */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-/* Media query to hide sidebar on mobile devices */
-@media screen and (max-width: 768px) {
-  .sidebar {
-    display: none;
+
+/* Main content area where properties are displayed */
+.main-content {
+  flex-grow: 1;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+/* HomeType section styling */
+.HomeType {
+  padding-left: 20px; /* Adjust this value as needed */
+  background-color: #f7f9fc; /* Optional: Light background for visual separation */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow for depth */
+}
+
+/* Searchbar styling */
+.search-container {
+  padding: 10px 0;
+}
+
+/* Filter section styling */
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filter-section select,
+.filter-section input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff9500;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cards container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* No properties message */
+.no-properties {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-properties a {
+  color: #ff9500;
+  text-decoration: none;
+}
+
+.no-properties a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .buy-page {
+    padding: 20px 30px; /* Increase padding for medium screens */
+  }
+
+  .filter-options {
+    width: 100%; /* Full width for filter options */
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    padding-left: 15px; /* Adjust left padding for smaller screens */
   }
 }
 
-.search-container {
-  margin-bottom: 20px;
+/* Medium screens */
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+
+  .filter-options {
+    padding: 20px; /* Add more padding for better spacing */
+  }
 }
 
-.search-row {
-  display: flex;
-  margin-bottom: 20px; /* Space between rows */
+/* Small screens */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+
+  .buy-page {
+    flex-direction: column; /* Stack filter and main content */
+  }
+
+  .filter-options {
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space between sections */
+    margin: -17px;
+  }
+
+  .main-content {
+    padding-left: 15px; /* Adjust for small screens */
+  }
 }
 
-.search-row > *:not(:last-child) {
-  margin-right: 10px; /* Space between search bars in a row */
-}
-.img {
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
-  object-fit: cover; /* Keep aspect ratio */
-  margin-bottom: 10px; /* Space between images */
+/* Extra small screens */
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .filter-options {
+    padding: 15px; /* Reduce padding on very small screens */
+  }
+
+  .main-content {
+    padding-left: 10px; /* Minimal left padding */
+  }
 }
 
-.empty-div {
-  height: 50px; /* Adjust as needed */
-  margin-bottom: 20px;
-  background-color: #e0e0e0;
-}
+/* Very small screens */
+@media (max-width: 375px) {
+  .filter-options {
+    padding: 10px; /* Minimal padding for mobile */
+  }
 
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-}
+  .main-content {
+    padding-left: 5px; /* Minimal left padding for mobile */
+  }
 
-.search-row1 {
-  display: flex;
-  margin-bottom: 20px; /* Space between rows */
-}
-
-.search-row1 > *:not(:last-child) {
-  margin-right: 10px; /* Space between search bars in a row */
-}
-
-.search-row2 {
-  display: flex;
-  margin-bottom: 20px; /* Space between rows */
-  padding-right: 7cqi;
-}
-
-.search-row2 > *:not(:last-child) {
-  margin-right: 10px; /* Space between search bars in a row */
-}
-.PriceRange1{
-  margin-bottom: 20px; /* Space between rows */
-}
-.HomeType {
-  margin-bottom: 10px;
-}
-
-.HomeTypeMain {
- 
-  
-  padding: 10px;
-  padding-left: 30px;
-
-}
-
-.h2main {
-  margin-left: 32px;
-  
+  /* Ensure the search bar width is responsive */
+  .search-container {
+    padding: 5px 0;
+  }
 }

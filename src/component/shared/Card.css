@@ -1,9 +1,8 @@
-/* src/component/shared/Card.css */
-
+/* Default styles for the card */
 .card {
   border-radius: 5px;
   overflow: hidden;
-  max-width: 300px;
+  max-width: 300px; /* Default max width */
   margin: 16px;
   transition: box-shadow 0.3s ease;
   box-shadow: none; /* Remove any default shadow */
@@ -49,4 +48,98 @@
   color: black;
   margin: 4px 0;
   font-weight: bold;
+}
+
+/* Media Queries for responsive design */
+
+/* Screen size: 1300px */
+@media screen and (max-width: 1300px) {
+  .card {
+    max-width: 400px; /* Increase card width */
+  }
+  .card-title {
+    font-size: medium;
+  }
+}
+
+/* Screen size: 1100px */
+@media screen and (max-width: 1100px) {
+  .card {
+    max-width: 350px;
+  }
+  .card-title {
+    font-size: medium;
+  }
+}
+
+/* Screen size: 800px */
+@media screen and (max-width: 800px) {
+  .card {
+    max-width: 100%; /* Full width for smaller screens */
+    margin: 8px;
+  }
+  .card-title {
+    font-size: medium;
+  }
+}
+
+/* Screen size: 730px */
+@media screen and (max-width: 730px) {
+  .card {
+    max-width: 100%;
+    margin: 8px;
+  }
+  .card-title {
+    font-size: medium;
+  }
+}
+
+/* Screen size: 650px */
+@media screen and (max-width: 650px) {
+  .card {
+    max-width: 100%;
+  }
+  .card-title {
+    font-size: 16px;
+  }
+}
+
+/* Screen size: 550px */
+@media screen and (max-width: 550px) {
+  .card {
+    max-width: 100%;
+  }
+  .card-title {
+    font-size: 15px;
+  }
+}
+
+/* Screen size: 420px */
+@media screen and (max-width: 420px) {
+  .card {
+    max-width: 100%;
+  }
+  .card-title {
+    font-size: 14px;
+  }
+}
+
+/* Screen size: 340px */
+@media screen and (max-width: 340px) {
+  .card {
+    max-width: 100%;
+  }
+  .card-title {
+    font-size: 13px;
+  }
+}
+
+/* Screen size: 300px */
+@media screen and (max-width: 300px) {
+  .card {
+    max-width: 100%;
+  }
+  .card-title {
+    font-size: 12px;
+  }
 }

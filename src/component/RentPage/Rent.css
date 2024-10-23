@@ -1,37 +1,151 @@
-.rent-page {
-    padding: 20px;
+.rentContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Search Header */
+.searchHeader {
+  padding-left: 30px;
+}
+
+/* Sidebar for filter options */
+.filterArea {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: aliceblue;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content area where properties are displayed */
+.mainArea {
+  flex-grow: 1;
+  margin-top: 0;
+}
+
+.filterGroup {
+  margin-bottom: 20px;
+}
+
+.filterGroup label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filterGroup select,
+.filterGroup input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff9500;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Search bar styling */
+.searchHeader h5 {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.filterGroup input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.0);
+}
+
+/* Cards container */
+.propertyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.noResults {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.noResults a {
+  color: #ff9500;
+  text-decoration: none;
+}
+
+.noResults a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .rentContainer {
+    flex-direction: column;
+    margin-left: -20px;
   }
-  
-  .filter-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+
+  .filterArea {
+    width: 100%;
     margin-bottom: 20px;
   }
-  
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-    gap: 20px;
+
+  .mainArea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .propertyGrid {
+    grid-template-columns: repeat(1, 1fr);
   }
   
-  @media (max-width: 768px) {
-    .card-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
-    }
+  .searchHeader {
+    padding-left: 20px;
   }
-  
-  @media (max-width: 500px) {
-    .card-container {
-      grid-template-columns: 1fr; /* 1 card per row on mobile */
-    }
+
+  .filterArea {
+    padding: 10px;
   }
-  
-  @media (max-width: 768px) {
-    .filter-section {
-      justify-content: space-between;
-      flex-direction: column;
-      gap: 10px;
-    }
+}
+
+@media (max-width: 500px) {
+  .propertyGrid {
+    grid-template-columns: 1fr;
   }
-  
+
+  .searchHeader h5 {
+    font-size: 18px;
+  }
+
+  .filterGroup input,
+  .filterGroup select {
+    padding: 8px;
+  }
+}
+
+/* Additional media queries for improved responsiveness */
+
+@media (max-width: 1200px) {
+  .propertyGrid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .rentContainer {
+    padding: 10px;
+  }
+
+  .filterArea {
+    padding: 8px;
+  }
+
+  .filterGroup {
+    margin-bottom: 15px;
+  }
+
+  .noResults {
+    margin-top: 10px;
+  }
+}

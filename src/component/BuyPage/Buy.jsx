@@ -1,494 +1,144 @@
-import './BuyPage.css'; // Import the CSS file
+import { useState } from 'react';
+import Card from '../shared/Card';
 import SearchBar from '../shared/SearchBar';
 import searchIcon from '../../../public/assets/search.png';
-import homeIcon from '../../../public/assets/home.png';
-import villaIcon from '../../../public/assets/villa.png';
-import foundationIcon from '../../../public/assets/foundation.png';
-import scheduleIcon from '../../../public/assets/schedule.png';
-import vectorIcon from '../../../public/assets/vector.png';
-import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
+import Homeacq1 from '../../../public/assets/Homeacq1.png';
 import Homeacq2 from '../../../public/assets/Homeacq2.png';
 import Homeacq3 from '../../../public/assets/Homeacq3.png';
 import Homeacq4 from '../../../public/assets/Homeacq4.png';
-import Card from '../shared/Card';
-import Button from '../shared/Button'; 
+import './BuyPage.css'; // Import the CSS file for additional styling
+
+const properties = [
+  { title: "Beautiful Beach House", price: 5000000, image: Homeacq1, description: "A lovely beach house with stunning ocean views.", name: "Beach House 1", address: "123 Ocean Drive, Lagos", type: "House", state: "Lagos", features: ["Furnished", "Pool"] },
+  { title: "Urban Apartment", price: 4500000, image: Homeacq2, description: "A modern apartment in the city center with all amenities.", name: "City Apartment", address: "456 City Lane, Abuja", type: "Apartment", state: "Abuja", features: ["Furnished", "Air Conditioning"] },
+  { title: "Luxury Villa", price: 10000000, image: Homeacq3, description: "A luxurious villa with a private pool and garden.", name: "Villa Serenity", address: "789 Sunset Boulevard, Ikoyi", type: "Villa", state: "Lagos", features: ["Pool", "Garden"] },
+  { title: "Cozy Cottage", price: 2500000, image: Homeacq4, description: "A cozy cottage nestled in the countryside, perfect for a getaway.", name: "Country Cottage", address: "321 Countryside Road, Jos", type: "Cottage", state: "Plateau", features: ["Furnished"] },
+];
 
 const Buy = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [state, setState] = useState('All');
+  const [propertyType, setPropertyType] = useState('All');
+  const [features, setFeatures] = useState([]);
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value.toLowerCase());
+  };
+
+  const handleStateChange = (e) => {
+    setState(e.target.value);
+  };
+
+  const handleTypeChange = (e) => {
+    setPropertyType(e.target.value);
+  };
+
+  const handleFeatureChange = (e) => {
+    const { value, checked } = e.target;
+    setFeatures(prevFeatures =>
+      checked
+        ? [...prevFeatures, value]
+        : prevFeatures.filter(feature => feature !== value)
+    );
+  };
+
+  const filteredProperties = properties.filter(property => {
+    const isStateMatch = state === 'All' || property.state === state;
+    const isTypeMatch = propertyType === 'All' || property.type === propertyType;
+    const hasFeatures = features.every(feature => property.features.includes(feature));
+    
+    return (
+      (property.address.toLowerCase().includes(searchTerm) ||
+      property.title.toLowerCase().includes(searchTerm) ||
+      property.description.toLowerCase().includes(searchTerm)) &&
+      isStateMatch &&
+      isTypeMatch &&
+      hasFeatures
+    );
+  });
+
   return (
     <div className="buy-page">
-      <div className="sidebar">
-        <div className="search-container">
-          {/* First Line: 2 Search Bars */}
-          <div className="search-row">
-            <SearchBar
-              placeholder="For Sale"
-              height="40px"
-              width="250px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search"  />
-            </SearchBar>
-            <SearchBar
-              placeholder="For Rent"
-              height="40px"
-              width="250px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-          </div>
-          {/* Second Line: 2 Search Bars */}
-          <div className="search-row">
-            <SearchBar
-              placeholder="House"
-              height="40px"
-              width="250px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={homeIcon} alt="Search" />
-            </SearchBar>
-            <SearchBar
-              placeholder="Condo"
-              height="40px"
-              width="250px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={villaIcon} alt="Search" />
-            </SearchBar>
-          </div>
-          {/* Third Line: 1 Search Bar */}
-          <div className="search-row">
-            <SearchBar
-              placeholder="New Constructions"
-              height="40px"
-              width="200px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={foundationIcon} alt="Search" />
-            </SearchBar>
-          </div>
-          {/* Fourth Line: 2 Search Bars */}
-          <div className="search-row">
-            <SearchBar
-              placeholder="Coming Soon"
-              height="40px"
-              width="250px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={scheduleIcon} alt="Search" style={{ height: "12px", width: "12px"}}/>
-            </SearchBar>
-            <SearchBar
-  placeholder="More"
-  height="40px"
-  width="150px"
-  borderRadius="15px"
-  backgroundColor="#CFCECE"
->
-  <img 
-    src={vectorIcon} 
-    alt="Search"  
-    style={{
-      height: "16px",
-    }}
-  />
-</SearchBar>
-
-          </div>
-        </div>
-        {/* Remaining empty divs in the sidebar */}
-        <div className="H3text"> 
-          <h3>Bedrooms</h3>
-        </div>
-        {/* second div*/}
-        <div className="search-row1">
-            <SearchBar
-              placeholder="Studio"
-              height="40px"
-              width="300px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search"  />
-            </SearchBar>
-            <SearchBar
-              placeholder="1"
-              height="40px"
-              width="100px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-            <SearchBar
-              placeholder="2"
-              height="40px"
-              Width="50px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-          </div>
-
-
-        {/* third div  */}
-        <div className="search-row2">
-            <SearchBar
-              placeholder="3"
-              height="40px"
-              width="150px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search"  />
-            </SearchBar>
-            <SearchBar
-              placeholder="4+"
-              height="40px"
-              width="150px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-          </div>
-
-          <div className="H3text"> 
-          <h3>Bathrooms</h3>
-        </div>
-        {/* second div*/}
-        <div className="search-row1">
-            <SearchBar
-              placeholder="1+"
-              height="40px"
-              width="210px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search"  />
-            </SearchBar>
-            <SearchBar
-              placeholder="2+"
-              height="40px"
-              width="210px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-            <SearchBar
-              placeholder="3+"
-              height="40px"
-              Width="150px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-          </div>
-
-
-        {/* third div  */}
-        <div className="search-row2">
-            <SearchBar
-              placeholder="4+"
-              height="40px"
-              width="150px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search"  />
-            </SearchBar>
-            <SearchBar
-              placeholder="5+"
-              height="40px"
-              width="150px"
-              borderRadius="15px"
-              backgroundColor="#CFCECE"
-            >
-              <img src={searchIcon} alt="Search" />
-            </SearchBar>
-          </div>
-
-
-        <div className='PrizeRange'>
-          <h3>Price range</h3>
-           
-                      <div className='PriceRange1'>
-                      <SearchBar
-              placeholder=" Min"
-              height="40px"
-              width="300px"
-              borderRadius="15px"
-              backgroundColor=""
-              border="1px solid orange"
-            >
-            
-            </SearchBar>
-                      </div>
-                       <div className='PriceRange2'>
-            <SearchBar
-              placeholder="Max"
-              height="40px"
-              width="300px"
-              borderRadius="15px"
-              backgroundColor=""
-              border="1px solid orange"
-            >
-            
-                      </SearchBar>
-                      </div>
+      <div className="filter-options">
+        <h4>Filter Properties</h4>
+        <div className="filter-section">
+          <label>State:</label>
+          <select value={state} onChange={handleStateChange}>
+            <option value="All">All States</option>
+            <option value="Abuja">Abuja</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Ogun">Ogun</option>
+            <option value="Kaduna">Kaduna</option>
+            <option value="Kano">Kano</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Anambra">Anambra</option>
+            <option value="Plateau">Plateau</option>
+            {/* Add more Nigerian states as needed */}
+          </select>
         </div>
 
-  {/* Home  Type Div */}
-<div className='HomeTypeContainer'>
-  <h3>Home Type</h3>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Houses"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-      
-    </SearchBar>
-  </div>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Apartments"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-     
-    </SearchBar>
-  </div>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Condos/co-ops"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-      
-    </SearchBar>
-  </div>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Townhomes"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-      
-    </SearchBar>
-  </div>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Manufactures"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-      
-    </SearchBar>
-  </div>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Lots/land"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-    
-    </SearchBar>
-  </div>
-
-  <div className='HomeType'>
-    <SearchBar
-      placeholder="Multifamily"
-      height="40px"
-      width="300px"
-      borderRadius="15px"
-      backgroundColor=""
-      border="1px solid orange"
-      showRadio={true}
-      radioName="homeType"
-    >
-      
-    </SearchBar>
-  </div>
-</div>
-
-       <div className='PrizeRange'>
-          <h3>Keywords</h3>
-           
-                      <div className='PriceRange1'>
-                      <SearchBar
-              placeholder=" Eg, Lake, Pool, Ocean  view"
-              height="40px"
-              width="300px"
-              borderRadius="15px"
-              backgroundColor=""
-              border="1px solid orange"
-            >
-            
-            </SearchBar>
-                      </div>
-                      <Button 
-           
-            text="Apply"
-            bgColor="rgb(220, 101, 41)" // Example background color
-            txColor="#fff"    // Example text color
-            btnBorder="none"
-            width="300px"
-            borderRadius="5px"
-            padding="8px 16px"
-            fontSize="14px"
-            cursor="pointer"
-            transition="background-color 0.3s ease"
-          />
+        <div className="filter-section">
+          <label>Property Type:</label>
+          <select value={propertyType} onChange={handleTypeChange}>
+            <option value="All">All Types</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Villa">Villa</option>
+            <option value="Duplex">Duplex</option>
+            <option value="House">House</option>
+            <option value="Cottage">Cottage</option>
+            <option value="Mansion">Mansion</option>
+            <option value="Loft">Loft</option>
+            <option value="Bungalow">Bungalow</option>
+          </select>
         </div>
 
-      
-
-
-
+        <div className="filter-section">
+          <label>Features:</label>
+          <div>
+            <input type="checkbox" value="Furnished" onChange={handleFeatureChange} /> Furnished
+            <input type="checkbox" value="Air Conditioning" onChange={handleFeatureChange} /> Air Conditioning
+            <input type="checkbox" value="Pool" onChange={handleFeatureChange} /> Pool
+            <input type="checkbox" value="Garden" onChange={handleFeatureChange} /> Garden
+          </div>
+        </div>
       </div>
-
-
-      
 
       <div className="main-content">
         <h2 className='h2main'>Explore Properties for Sale</h2>
-        
-        <div
-  className="HomeTypeMain"
-  style={{
-    width: window.innerWidth <= 500 ? '270px' : window.innerWidth <= 768 ? '250px' : '300px',
-    padding: '10px',
-    paddingLeft: '30px',
-    
-  }}
->
-  <SearchBar
-    placeholder="Search Properties for Sale"
-    height="40px"
-    width="100%"  /* Use width as 100% to take the div's width */
-    borderRadius="15px"
-    backgroundColor=""
-    border="1px solid orange"
-  >
-    <img src={searchIcon} alt="Search" />
-  </SearchBar>
-</div>
+        <div className="search-container">
+          <SearchBar
+            placeholder="Search Properties for Sale"
+            height="40px"
+            width="95%"
+            borderRadius="15px"
+            border="1px solid orange"
+            onChange={handleSearch}
+          >
+            <img src={searchIcon} alt="Search" />
+          </SearchBar>
+        </div>
 
-      
-        
-  <div className="card-container">
-  <Card 
-    title="Beautiful Beach House"
-    price={5000000}
-    image={Homeacq1}
-    description="A lovely beach house with stunning ocean views."
-    name="Beach House 1"
-    address="123 Ocean Drive, Lagos"
-  />
-  <Card 
-    title="Urban Apartment"
-    price={4500000}
-    image={Homeacq2}
-    description="A modern apartment in the city center with all amenities."
-    name="City Apartment"
-    address="456 City Lane, Abuja"
-  />
-  <Card 
-    title="Luxury Villa"
-    price={10000000}
-    image={Homeacq3}
-    description="A luxurious villa with a private pool and garden."
-    name="Villa Serenity"
-    address="789 Sunset Boulevard, Ikoyi"
-  />
-  <Card 
-    title="Cozy Cottage"
-    price={2500000}
-    image={Homeacq4}
-    description="A cozy cottage nestled in the countryside, perfect for a getaway."
-    name="Country Cottage"
-    address="321 Countryside Road, Jos"
-  />
-  <Card 
-    title="Modern Duplex"
-    price={6000000}
-    image={Homeacq1}
-    description="A spacious duplex with modern finishes and a rooftop terrace."
-    name="Duplex Haven"
-    address="654 Green Park, Lekki"
-  />
-  <Card 
-    title="Penthouse Suite"
-    price={8500000}
-    image={Homeacq2}
-    description="A stunning penthouse suite with panoramic city views."
-    name="Skyline Penthouse"
-    address="987 Tower Plaza, Victoria Island"
-  />
-  <Card 
-    title="Family Bungalow"
-    price={4000000}
-    image={Homeacq3}
-    description="A comfortable bungalow perfect for family living."
-    name="Bungalow Bliss"
-    address="432 Maple Avenue, Enugu"
-  />
-  <Card 
-    title="Seaside Condo"
-    price={7500000}
-    image={Homeacq4}
-    description="A stylish condo with easy access to the beach."
-    name="Ocean Breeze Condo"
-    address="567 Beachfront Avenue, Port Harcourt"
-  />
-</div>
-
-      
+        {/* Property Cards */}
+        <div className="card-container">
+          {filteredProperties.length > 0 ? (
+            filteredProperties.map((property, index) => (
+              <Card
+                key={index}
+                title={property.title}
+                price={property.price}
+                image={property.image}
+                description={property.description}
+                name={property.name}
+                address={property.address}
+              />
+            ))
+          ) : (
+            <div className="no-properties">
+              <p>No properties found.</p>
+              <a href="#">Try a different search</a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,8 @@
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './Home.css';
 
-// Import the image files
+// import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import './Home.css'; // Import CSS for styling
+
+// Import image assets
 import Homeacq1 from '../../../public/assets/Homeacq1.png'; 
 import Homeacq2 from '../../../public/assets/Homeacq2.png';
 import Homeacq3 from '../../../public/assets/Homeacq3.png';
@@ -10,47 +11,44 @@ import Agent4 from '../../../public/assets/Agent4.png';
 import Agent3 from '../../../public/assets/Agent3.png';
 import Agent2 from '../../../public/assets/Agent2.png';
 import Agent1 from '../../../public/assets/Agent1.png';
-import img1 from '../../../public/assets/img1.png';  // Adjusted relative path to match your folder structure
+import img1 from '../../../public/assets/img1.png';  // Ensure correct relative path
+
+// Import shared components
 import Button from '../shared/Button';
 import Card from '../shared/Card';
 import TestimonialCard from '../shared/TestimonialCard';
+import Filter from '../shared/Filter'; // Assuming Filter component is used in the hero section
 
 const Home = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  // const navigate = useNavigate(); // Initialize useNavigate for page navigation
 
-  const handleLike = () => {
-    // Handle like button click
+  // const handleExploreClick = () => {
+  //   navigate('/buy'); // Navigate to Buy page on button click
+  // };
+
+  const handleLike = (id) => {
+    // Logic for liking a testimonial
+    console.log(`Liked testimonial with id: ${id}`);
   };
 
-  const handleDislike = () => {
-    // Handle dislike button click
-  };
-
-  const handleExploreClick = () => {
-    navigate('/buy'); // Navigate to the Buy page
+  const handleDislike = (id) => {
+    // Logic for disliking a testimonial
+    console.log(`Disliked testimonial with id: ${id}`);
   };
 
   return (
     <div>
-      {/* Use the imported image */}
-      <img src={img1} alt="Home Image" className="home-image" />
-      <div className='Home-content'>
-        <h1>Find your <br /> dream home</h1>
-        <p>Expert Local Knowledge, Personalized Service. <br /> Exceptional Result.</p>
-        <Button 
-          btnClass="sign-in-btn"
-          onClick={handleExploreClick} // Use the navigation function here
-          text="Explore homes"
-          bgColor="rgb(220, 101, 41)" // Example background color
-          txColor="#fff"    // Example text color
-          btnBorder="none"
-          borderRadius="5px"
-          padding="8px 16px" // Adjusted padding for smaller button
-          fontSize="14px" // Adjusted font size for smaller button
-          cursor="pointer"
-          transition="background-color 0.3s ease"
-        />
+      {/* New Hero Section */}
+      <div className="hero-section">
+        <img src={img1} alt="Home Image" className="hero-image" />
+        <div className="hero-content">
+          <h1 className="hero-title">Find Your Dream Property</h1>
+          <p className="hero-subtitle">Buy, Rent, or Lease properties on ease</p>
+          <Filter />
+        </div>
       </div>
+
+      {/* Feature Listings Section */}
       <div className="container">
         <div className="Featurelistings">
           <h2>Feature Listings</h2>
@@ -60,31 +58,34 @@ const Home = () => {
               title="Beautiful Beach House"
               image={Homeacq1}
               imageHeight="185px"
+              address="123 Ocean Drive, Miami, FL"
             />
             <Card 
               price={5000000}
-              title="Beautiful Beach House"
+              title="Cozy Mountain Cabin"
               image={Homeacq2}
               imageHeight="185px"
+              address="456 Mountain Road, Denver, CO"
             />
             <Card 
               price={5000000}
-              title="Beautiful Beach House"
+              title="Luxury City Apartment"
               image={Homeacq3}
               imageHeight="185px"
-              description="Beautiful Beach House"
+              address="789 Park Ave, New York, NY"
             />
             <Card 
               price={5000000}
-              title="Beautiful Beach House"
+              title="Suburban Family Home"
               image={Homeacq4}
               imageHeight="185px"
+              address="101 Maple St, San Francisco, CA"
             />
           </div>
         </div>
       </div>
 
-      {/* Agent Div */}
+      {/* Agents Section */}
       <div className="container">
         <div className="Featurelistings">
           <h2>Meet Our Agents</h2>
@@ -156,7 +157,7 @@ const Home = () => {
             />
           </div>
           <Button 
-            ClassName="read-more-btn"
+            btnClass="read-more-btn"
             onClick={() => window.location.href = '/reviews'}
             text="Read More Reviews"
             bgColor="rgb(220, 101, 41)"
@@ -164,7 +165,6 @@ const Home = () => {
             btnBorder="none"
             borderRadius="5px"
             padding="8px 16px"
-            btnClass={"nav-button"}
             fontSize="14px"
             cursor="pointer"
             transition="background-color 0.3s ease"

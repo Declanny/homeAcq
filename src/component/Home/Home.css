@@ -1,32 +1,47 @@
 /* Base styling for the image */
-.home-image {
-  max-width: 100%; /* Ensure the image scales properly */
-  height: auto;    /* Maintain aspect ratio */
-  display: block;  /* Prevents extra space beneath the image */
-  margin-top: -30px; /* Adjust margin-top as needed */
-  padding: 0;     /* Remove any padding */
+.hero-section {
   position: relative;
-  z-index: 1;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 70px; /* Add space equivalent to the height of your navbar */
 }
 
-.Home-content {
-  position: relative;
-  z-index: 2;
-  margin-top: -550px; /* Adjust as needed */
-  padding: 120px; /* Add padding as needed */
-  color: white; /* Text color */
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the section without distortion */
+  z-index: -1; /* Keeps the image behind the content */
 }
 
-.Home-content h1 {
-  font-size: 70px; /* Example font size for the heading */
+.hero-content {
+  z-index: 1; /* Ensures content appears above the image */
+  text-align: center;
 }
 
-.Home-content p {
-  font-size: 14px; /* Example font size for the paragraph */
-  line-height: 1.5; /* Example line height */
-  margin-top: -40px; /* Example margin top for spacing */
-  color: whitesmoke;
+.hero-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: black;
 }
+
+.hero-subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: 900;
+}
+
+
+
+
 
 .container {
   display: flex;
