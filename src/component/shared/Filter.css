@@ -16,6 +16,7 @@
   border: 1px solid #ccc; /* Light border around the group */
   border-radius: 8px; /* Rounded corners for the group */
   overflow: hidden; /* Hide overflow to maintain rounded corners */
+  margin-bottom: -20px;
 }
 
 .filter-title {
@@ -49,7 +50,7 @@
 
 .filter-content {
   position: relative;
-  height: 250px; /* Set this to the desired height */
+  height: 220px; /* Set this to the desired height */
   margin: 20px auto; /* Center horizontally and add top/bottom spacing */
   max-width: 100%; /* Set a max width to prevent it from stretching too much */
   padding: 0 20px; /* Optional: add equal padding on left and right */
@@ -111,4 +112,20 @@
 
 .lease-filters {
   transform: translateX(0); /* Slide in when active */
+}
+
+.filter-submit-btn {
+  margin-bottom: 15px; /* Default margin-bottom */
+}
+
+@media screen and (max-width: 768px) {
+  .filter-submit-btn {
+    margin-bottom: 150px; /* Adjust for smaller screens */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .filter-submit-btn {
+    margin-bottom: 15px; /* Even smaller margin for mobile */
+  }
 }

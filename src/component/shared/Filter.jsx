@@ -1,18 +1,31 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import './Filter.css';
+import Button from "./Button";
 
 const Filter = () => {
-  // Set the default active filter to "Buy"
-  const [activeFilter, setActiveFilter] = useState("Buy"); // Changed null to "Buy"
+  const [activeFilter, setActiveFilter] = useState("Buy"); // Default to "Buy"
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleFilterClick = (filterType) => {
     setActiveFilter((prevFilter) => (prevFilter === filterType ? null : filterType));
   };
 
+  const handleFilterSubmit = () => {
+    // Navigate to the appropriate page based on the active filter
+    if (activeFilter === "Buy") {
+      navigate('/buy');
+    } else if (activeFilter === "Rent") {
+      navigate('/rent');
+    } else if (activeFilter === "Lease") {
+      navigate('/mortgage'); // Navigate to mortgage for lease option
+    }
+  };
+
   return (
     <div className="filter-container">
       <div className="filter-titles">
-        <div className="button-group"> {/* Changed class name to button-group */}
+        <div className="button-group">
           <button
             className={`filter-title ${activeFilter === "Buy" ? "active" : ""}`}
             onClick={() => handleFilterClick("Buy")}
@@ -41,7 +54,6 @@ const Filter = () => {
             <input type="text" placeholder="Price Range" />
             <input type="text" placeholder="Location" />
             <input type="text" placeholder="Property Type" />
-            {/* Add more buy filters */}
           </div>
         )}
         {activeFilter === "Rent" && (
@@ -50,7 +62,6 @@ const Filter = () => {
             <input type="text" placeholder="Rent Price Range" />
             <input type="text" placeholder="Location" />
             <input type="text" placeholder="Property Type" />
-            {/* Add more rent filters */}
           </div>
         )}
         {activeFilter === "Lease" && (
@@ -59,10 +70,16 @@ const Filter = () => {
             <input type="text" placeholder="Lease Price Range" />
             <input type="text" placeholder="Location" />
             <input type="text" placeholder="Property Type" />
-            {/* Add more lease filters */}
           </div>
         )}
       </div>
+
+      {/* Button to trigger navigation */}
+      <Button
+      bgColor="rgb(220, 101, 41)"
+      onClick={handleFilterSubmit} className="filter-submit-btn">
+        Go to {activeFilter} Page
+      </Button>
     </div>
   );
 };
