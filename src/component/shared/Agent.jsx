@@ -1,4 +1,3 @@
-// src/components/Agent.jsx
 import PropTypes from 'prop-types';
 import Button from '../shared/Button'; // Import your existing Button component
 import './Agent.css'; // Import the external CSS file
@@ -11,6 +10,7 @@ const Agent = ({ name, distance, buttonText, imageSrc, imageHeight, imageWidth }
         alt={name}
         className="agent-image"
         style={{ height: imageHeight, width: imageWidth }}
+        loading="lazy" // Enable lazy loading
       />
       <div className="agent-details-container">
         <div className="agent-name">{name}</div>

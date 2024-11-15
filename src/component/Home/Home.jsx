@@ -1,5 +1,4 @@
 
-// import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Home.css'; // Import CSS for styling
 
 // Import image assets
@@ -20,12 +19,6 @@ import TestimonialCard from '../shared/TestimonialCard';
 import Filter from '../shared/Filter'; // Assuming Filter component is used in the hero section
 
 const Home = () => {
-  // const navigate = useNavigate(); // Initialize useNavigate for page navigation
-
-  // const handleExploreClick = () => {
-  //   navigate('/buy'); // Navigate to Buy page on button click
-  // };
-
   const handleLike = (id) => {
     // Logic for liking a testimonial
     console.log(`Liked testimonial with id: ${id}`);
@@ -40,10 +33,15 @@ const Home = () => {
     <div>
       {/* New Hero Section */}
       <div className="hero-section">
-        <img src={img1} alt="Home Image" className="hero-image" />
+        <img 
+          src={img1} 
+          alt="Home Image" 
+          className="hero-image" 
+          loading="lazy"  // Lazy load image
+        />
         <div className="hero-content">
           <h1 className="hero-title">Find Your Dream Property</h1>
-          <p className="hero-subtitle">Buy, Rent, or Lease properties on ease</p>
+          <p className="hero-subtitle">Buy, Rent, or Lease properties with ease</p>
           <Filter />
         </div>
       </div>
